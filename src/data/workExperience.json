@@ -1,0 +1,52 @@
+{
+  "workExperience": [
+    {
+      "company_name": "Qwork",
+      "job_title": "Mobile App Developer",
+      "start_date": "Oct 2023",
+      "end_date": "Present",
+      "skills": ["React Native", "Typescript", "React"],
+      "imagePath": "/qwork.jpeg"
+    },
+    {
+      "company_name": "Pikpo",
+      "job_title": "Junior Fullstack Engineer",
+      "start_date": "Oct 2021",
+      "end_date": "Present",
+      "skills": ["Flutter", "Dart", "Golang", "gRPC", "Python", "FastAPI"],
+      "imagePath": "/pikpo.jpeg"
+    },
+    {
+      "company_name": "Jasapedia",
+      "job_title": "Mobile Developer",
+      "start_date": "Jul 2022",
+      "end_date": "Aug 2022",
+      "skills": ["Flutter", "Dart", "SQLite"],
+      "imagePath": "/jasapedia.jpeg"
+    },
+    {
+      "company_name": "Apical",
+      "job_title": "Electrical & Instrumentation Technician",
+      "start_date": "May 2021",
+      "end_date": "Aug 2021",
+      "skills": ["Electrical Wiring", "DCS", "PLC", "Instrumentation"],
+      "imagePath": "/apical.png"
+    },
+    {
+      "company_name": "Bayan",
+      "job_title": "Electrical Technician",
+      "start_date": "Oct 2019",
+      "end_date": "Dec 2019",
+      "skills": ["Electrical Wiring", "Instrumentation"],
+      "imagePath": "/bayan.png"
+    },
+    {
+      "company_name": "Schlumberger",
+      "job_title": "Wireline Maintenance Specialist",
+      "start_date": "Aug 2019",
+      "end_date": "Sep 2019",
+      "skills": ["Electrical Wiring", "Instrumentation"],
+      "imagePath": "/slb.png"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "projects": [
+    {
+      "name": "Hybrid KNN Recommendation",
+      "date": "Jun 2023",
+      "imagePath": "/python_logo.png",
+      "description": "Hybrid Content-Based Filtering & Collaborative Filtering Using KNN for Social Media explore feature",
+      "link": "https://github.com/raka-raprast/hybrid_knn_recommendation"
+    },
+    {
+      "name": "Emovied",
+      "date": "Apr 2023",
+      "imagePath": "/dart_logo.png",
+      "description": "Develop a mobile application that displays current movie screenings, ongoing television show broadcasts, and provides users with comprehensive information about the movie, including its plot summary and cast details.",
+      "link": "https://github.com/raka-raprast/emovied"
+    },
+    {
+      "name": "Go gRPC Mailing List",
+      "date": "Dec 2022",
+      "imagePath": "/go_logo.png",
+      "description": "First golang public repository. The project intention is to learn how to utilize gRPC server and Protocol Buffer.",
+      "link": "https://github.com/raka-raprast/gogrpc-mailing-list"
+    },
+    {
+      "name": "Technical Service Report",
+      "date": "Sep 2022",
+      "imagePath": "/dart_logo.png",
+      "description": "Client request to help report for technical service related issue",
+      "link": "https://github.com/raka-raprast/technical-service-report"
+    },
+    {
+      "name": "Face Detection",
+      "date": "Jan 2022",
+      "imagePath": "/dart_logo.png",
+      "description": "Implement tensorflow using tflite to flutter and learn how to apply Machine Learning on android apps.",
+      "link": "https://github.com/raka-raprast/face_detection"
+    },
+    {
+      "name": "Churn Prediction",
+      "date": "Sep 2021",
+      "imagePath": "/python_logo.png",
+      "description": "Utilize and looking for the best models for predicting telco customer churn",
+      "link": "https://github.com/raka-raprast/churn-prediction"
+    },
+    {
+      "name": "Heart Disease Prediction",
+      "date": "Aug 2021",
+      "imagePath": "/python_logo.png",
+      "description": "The prospect of using machine learning to predicting a heart disease",
+      "link": "https://github.com/raka-raprast/heart-disease-prediction"
+    }
+  ]
+}

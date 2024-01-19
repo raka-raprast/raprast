@@ -1,0 +1,18 @@
+{
+  "educationExperience": [
+    {
+      "school_name": "Balikpapan University",
+      "major": "Bachelor of Electrical Engineering",
+      "start_date": "Aug 2021",
+      "end_date": "Present",
+      "imagePath": "/uniba_logo.png"
+    },
+    {
+      "school_name": "State Polytechnic of Balikpapan",
+      "major": "Diploma of Electrical Engineering",
+      "start_date": "Aug 2017",
+      "end_date": "Aug 2020",
+      "imagePath": "/poltekba_logo.png"
+    }
+  ]
+}
