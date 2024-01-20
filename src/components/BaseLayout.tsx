@@ -12,12 +12,27 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mobileStatus = window.innerWidth <= 600;
-      setIsMobile(mobileStatus);
+    // Check if the value is already in localStorage
+    const cachedIsMobile = localStorage.getItem("isMobile");
+
+    if (cachedIsMobile !== null) {
+      setIsMobile(JSON.parse(cachedIsMobile));
       setIsLoading(false);
+    } else {
+      // If not found in localStorage, determine and set isMobile
+      if (typeof window !== "undefined") {
+        const userAgent = window.navigator.userAgent;
+        const isMobileDevice = /Mobi|Android/i.test(userAgent);
+
+        setIsMobile(isMobileDevice);
+        setIsLoading(false);
+
+        // Save to localStorage for future use
+        localStorage.setItem("isMobile", JSON.stringify(isMobileDevice));
+      }
     }
   }, []);
+
   if (isLoading) {
     return (
       <div className="loadingBarFullScreen">

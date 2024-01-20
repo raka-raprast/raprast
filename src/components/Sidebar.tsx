@@ -50,9 +50,22 @@ const Sidebar = () => {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mobileStatus = window.innerWidth <= 600;
-      setIsMobile(mobileStatus);
+    // Check if the value is already in localStorage
+    const cachedIsMobile = localStorage.getItem("isMobile");
+
+    if (cachedIsMobile !== null) {
+      setIsMobile(JSON.parse(cachedIsMobile));
+    } else {
+      // If not found in localStorage, determine and set isMobile
+      if (typeof window !== "undefined") {
+        const userAgent = window.navigator.userAgent;
+        const isMobileDevice = /Mobi|Android/i.test(userAgent);
+
+        setIsMobile(isMobileDevice);
+
+        // Save to localStorage for future use
+        localStorage.setItem("isMobile", JSON.stringify(isMobileDevice));
+      }
     }
   }, []);
   if (isMobile) {
