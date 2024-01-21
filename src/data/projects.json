@@ -48,6 +48,13 @@
       "imagePath": "/python_logo.png",
       "description": "The prospect of using machine learning to predicting a heart disease",
       "link": "https://github.com/raka-raprast/heart-disease-prediction"
+    },
+    {
+      "name": "Solar Powered Park Bench",
+      "date": "Aug 2020",
+      "imagePath": "/arduino_logo.png",
+      "description": "The importance of electricity for daily life is because electricity is inherent in basic human needs. Generally electricity is produced from fossil energy derived from the remains of living things that have been buried millions of years. The increasing need for electrical energy means also increases the needs of fossil energy which requires a long time to be utilized as a power plant power source. Solar power generation lately is certainly a new alternative to replace fossil-powered electricity generation. Of course in Indonesia, a tropical climate has the advantage of utilizing solar radiation into a source of electricity. By utilizing solar panels to supply VRLA batteries as power supply to lamps controlled by Arduino Uno microcontrollers and cell phone Charging Stations that will charge VRLA batteries during the day and can be enjoyed at night.",
+      "link": "https://github.com/raka-raprast/solar-powered-park-bench"
     }
   ]
 }
