@@ -170,7 +170,7 @@ const Contact: React.FC = () => {
             </div>
           </a>
           <a
-            href="https://api.whatsapp.com/send/?phone=6281369833149"
+            href="https://api.whatsapp.com/send/?phone=6281996255555"
             rel="noopener noreferrer"
             style={
               {
@@ -200,41 +200,8 @@ const Contact: React.FC = () => {
               />
               <p style={{ color: "white" } as React.CSSProperties}>WhatsApp</p>
             </div>
-            {/* <p style={{ color: "black" } as React.CSSProperties}>
-              Say hi on Whatsapp
-            </p> */}
           </a>
         </div>
-        {/* <div className="flex space-x-4">
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-600"
-            href="#"
-          >
-            <BsTwitterX className="h-4 w-4 mr-2" />
-            Twitter
-          </Link>
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-700"
-            href="#"
-          >
-            <MdFacebook className="h-4 w-4 mr-2" />
-            Facebook
-          </Link>
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md bg-pink-500 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-pink-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pink-600"
-            href="#"
-          >
-            <BsInstagram className="h-4 w-4 mr-2" />
-            Instagram
-          </Link>
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-800"
-            href="#"
-          >
-            <BsLinkedin className="h-4 w-4 mr-2" />
-            LinkedIn
-          </Link>
-        </div> */}
       </div>
       <div className="footer">© 2024 Raka Ramadhani Aulia Prasetyo</div>
     </BaseLayout>
