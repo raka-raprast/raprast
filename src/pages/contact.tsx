@@ -5,9 +5,11 @@ import {
   BsInstagram,
   BsLinkedin,
   BsMailbox,
+  BsTwitterX,
   BsWhatsapp,
 } from "react-icons/bs";
-import { MdMail } from "react-icons/md";
+import { MdFacebook, MdMail } from "react-icons/md";
+import Link from "next/link";
 
 const Contact: React.FC = () => {
   return (
@@ -35,11 +37,7 @@ const Contact: React.FC = () => {
           through the channels below. Let&apos;s create something awesome
           together!
         </p>
-        <div
-          style={
-            { paddingLeft: "15px", paddingTop: "15px" } as React.CSSProperties
-          }
-        >
+        <div>
           <a
             href="https://github.com/raka-raprast"
             target="_blank"
@@ -49,21 +47,29 @@ const Contact: React.FC = () => {
                 textDecoration: "none",
                 display: "flex",
                 paddingTop: "15px",
+                paddingRight: "15px",
               } as React.CSSProperties
             }
           >
-            <BsGithub
-              size={20}
+            <div
+              className="socmed_button"
               style={
                 {
-                  marginRight: "10px",
-                  color: "black",
+                  backgroundColor: "#24292e",
                 } as React.CSSProperties
               }
-            />
-            <p style={{ color: "black" } as React.CSSProperties}>
-              Explore my projects on GitHub
-            </p>
+            >
+              <BsGithub
+                size={20}
+                style={
+                  {
+                    marginRight: "10px",
+                    color: "white",
+                  } as React.CSSProperties
+                }
+              />
+              <p style={{ color: "white" } as React.CSSProperties}>GitHub</p>
+            </div>
           </a>
           <a
             href="https://www.instagram.com/raka.raprast/"
@@ -74,21 +80,29 @@ const Contact: React.FC = () => {
                 textDecoration: "none",
                 display: "flex",
                 paddingTop: "15px",
+                paddingRight: "15px",
               } as React.CSSProperties
             }
           >
-            <BsInstagram
-              size={20}
+            <div
+              className="socmed_button"
               style={
                 {
-                  marginRight: "10px",
-                  color: "black",
+                  backgroundColor: "#515bd4",
                 } as React.CSSProperties
               }
-            />
-            <p style={{ color: "black" } as React.CSSProperties}>
-              Casually reach me out on Instagram
-            </p>
+            >
+              <BsInstagram
+                size={20}
+                style={
+                  {
+                    marginRight: "10px",
+                    color: "white",
+                  } as React.CSSProperties
+                }
+              />
+              <p style={{ color: "white" } as React.CSSProperties}>Instagram</p>
+            </div>
           </a>
           <a
             href="https://www.linkedin.com/in/raka-raprast/"
@@ -99,21 +113,29 @@ const Contact: React.FC = () => {
                 textDecoration: "none",
                 display: "flex",
                 paddingTop: "15px",
+                paddingRight: "15px",
               } as React.CSSProperties
             }
           >
-            <BsLinkedin
-              size={20}
+            <div
+              className="socmed_button"
               style={
                 {
-                  marginRight: "10px",
-                  color: "black",
+                  backgroundColor: "#0077b5",
                 } as React.CSSProperties
               }
-            />
-            <p style={{ color: "black" } as React.CSSProperties}>
-              Professionally reach me out on LinkedIn
-            </p>
+            >
+              <BsLinkedin
+                size={20}
+                style={
+                  {
+                    marginRight: "10px",
+                    color: "white",
+                  } as React.CSSProperties
+                }
+              />
+              <p style={{ color: "white" } as React.CSSProperties}>LinkedIn</p>
+            </div>
           </a>
           <a
             href="mailto:raprast.raka@gmail.com"
@@ -123,21 +145,29 @@ const Contact: React.FC = () => {
                 textDecoration: "none",
                 display: "flex",
                 paddingTop: "15px",
+                paddingRight: "15px",
               } as React.CSSProperties
             }
           >
-            <MdMail
-              size={20}
+            <div
+              className="socmed_button"
               style={
                 {
-                  marginRight: "10px",
-                  color: "black",
+                  backgroundColor: "#d44638",
                 } as React.CSSProperties
               }
-            />
-            <p style={{ color: "black" } as React.CSSProperties}>
-              Send me an Email
-            </p>
+            >
+              <MdMail
+                size={20}
+                style={
+                  {
+                    marginRight: "10px",
+                    color: "white",
+                  } as React.CSSProperties
+                }
+              />
+              <p style={{ color: "white" } as React.CSSProperties}>Email</p>
+            </div>
           </a>
           <a
             href="https://api.whatsapp.com/send/?phone=6281369833149"
@@ -147,23 +177,64 @@ const Contact: React.FC = () => {
                 textDecoration: "none",
                 display: "flex",
                 paddingTop: "15px",
+                paddingRight: "15px",
               } as React.CSSProperties
             }
           >
-            <BsWhatsapp
-              size={20}
+            <div
+              className="socmed_button"
               style={
                 {
-                  marginRight: "10px",
-                  color: "black",
+                  backgroundColor: "#128c7e",
                 } as React.CSSProperties
               }
-            />
-            <p style={{ color: "black" } as React.CSSProperties}>
+            >
+              <BsWhatsapp
+                size={20}
+                style={
+                  {
+                    marginRight: "10px",
+                    color: "white",
+                  } as React.CSSProperties
+                }
+              />
+              <p style={{ color: "white" } as React.CSSProperties}>WhatsApp</p>
+            </div>
+            {/* <p style={{ color: "black" } as React.CSSProperties}>
               Say hi on Whatsapp
-            </p>
+            </p> */}
           </a>
         </div>
+        {/* <div className="flex space-x-4">
+          <Link
+            className="inline-flex h-10 items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-600"
+            href="#"
+          >
+            <BsTwitterX className="h-4 w-4 mr-2" />
+            Twitter
+          </Link>
+          <Link
+            className="inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-700"
+            href="#"
+          >
+            <MdFacebook className="h-4 w-4 mr-2" />
+            Facebook
+          </Link>
+          <Link
+            className="inline-flex h-10 items-center justify-center rounded-md bg-pink-500 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-pink-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pink-600"
+            href="#"
+          >
+            <BsInstagram className="h-4 w-4 mr-2" />
+            Instagram
+          </Link>
+          <Link
+            className="inline-flex h-10 items-center justify-center rounded-md bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-800"
+            href="#"
+          >
+            <BsLinkedin className="h-4 w-4 mr-2" />
+            LinkedIn
+          </Link>
+        </div> */}
       </div>
       <div className="footer">© 2024 Raka Ramadhani Aulia Prasetyo</div>
     </BaseLayout>

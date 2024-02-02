@@ -27,7 +27,7 @@ body {
 .layout__main-content {
   flex-grow: 1;
   margin: 15px 15px 15px 0px;
-  box-shadow: 1px 1px 4px 1px #7fc7d9;
+  box-shadow: 1px 1px 4px 1px #598a96;
   background-color: white;
   border-radius: 5px;
 }
@@ -51,12 +51,12 @@ body {
 
 .sidebar__wrapper {
   position: relative;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px #7fc7d9;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #598a96;
 }
 
 .sidebar__wrapper_mobile {
   position: fixed;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px #7fc7d9;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #598a96;
 }
 
 .sidebar {
@@ -223,6 +223,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.socmed_button {
+  /* width: 130px; */
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  /* background-color: #d20303; */
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {

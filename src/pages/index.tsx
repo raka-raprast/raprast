@@ -328,7 +328,7 @@ const Home: React.FC = () => {
                         style={
                           {
                             marginRight: "15px",
-                            marginLeft: "40px",
+                            marginLeft: "45px",
                             color: "black",
                           } as React.CSSProperties
                         }
@@ -371,6 +371,7 @@ const Home: React.FC = () => {
           </div>
         )}
       </div>
+
       <div className="footer">© 2024 Raka Ramadhani Aulia Prasetyo</div>
     </BaseLayout>
   );
