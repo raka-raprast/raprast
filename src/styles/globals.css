@@ -192,8 +192,8 @@ body {
   object-fit: cover;
   object-position: center;
   display: block;
-  width: 240px;
-  height: 240px;
+  width: 200px;
+  height: 200px;
 }
 
 .name {
