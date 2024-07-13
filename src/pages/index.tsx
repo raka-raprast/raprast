@@ -73,7 +73,7 @@ const Home: React.FC = () => {
                   <ReactCompareSlider
                     className="avatarSmallScreen"
                     changePositionOnHover={true}
-                    position={50}
+                    position={48}
                     itemOne={
                       <ReactCompareSliderImage
                         src="/ai_avatar.png"
@@ -269,7 +269,7 @@ const Home: React.FC = () => {
                     className="avatar"
                     style={{ marginLeft: "60px" } as React.CSSProperties}
                     changePositionOnHover={true}
-                    position={50}
+                    position={48}
                     itemOne={
                       <ReactCompareSliderImage
                         src="/ai_avatar.png"
