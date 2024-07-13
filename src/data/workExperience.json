@@ -1,18 +1,25 @@
 {
-  "workExperience": [
+  "workExperience": [{
+    "company_name": "YouApp",
+    "job_title": "Lead Front-End Developer",
+    "start_date": "Jun 2024",
+    "end_date": "Present",
+    "skills": ["Flutter", "Typescript", "NextJS"],
+    "imagePath": "/youapp.jpg"
+  },
     {
       "company_name": "Qwork",
       "job_title": "Mobile App Developer",
       "start_date": "Oct 2023",
-      "end_date": "Present",
-      "skills": ["React Native", "Typescript", "React"],
+      "end_date": "Jun 2024",
+      "skills": ["React Native", "Typescript", "ReactJS"],
       "imagePath": "/qwork.jpeg"
     },
     {
       "company_name": "Pikpo",
-      "job_title": "Junior Fullstack Engineer",
+      "job_title": "Fullstack Engineer",
       "start_date": "Oct 2021",
-      "end_date": "Present",
+      "end_date": "Jun 2024",
       "skills": ["Flutter", "Dart", "Golang", "gRPC", "Python", "FastAPI"],
       "imagePath": "/pikpo.jpeg"
     },
