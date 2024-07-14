@@ -124,6 +124,7 @@ const Home: React.FC = () => {
                     {
                       <BsGithub
                         size={30}
+                        className="text"
                         style={
                           {
                             marginRight: "15px",
@@ -135,6 +136,7 @@ const Home: React.FC = () => {
                     {
                       <BsInstagram
                         size={30}
+                        className="text"
                         style={
                           {
                             marginRight: "15px",
@@ -145,6 +147,7 @@ const Home: React.FC = () => {
                     {
                       <BsLinkedin
                         size={30}
+                        className="text"
                         style={{ marginRight: "15px" } as React.CSSProperties}
                       />
                     }
@@ -172,36 +175,17 @@ const Home: React.FC = () => {
                   Raka Ramadhani Aulia Prasetyo
                 </h1>
                 <p
+                  className="description"
                   style={
                     {
                       fontSize: "medium",
                       textAlign: windowSize.width <= 1000 ? "justify" : "start",
-                      color: "#545454",
                     } as React.CSSProperties
                   }
                 >
-                  Hey there, tech aficionados and digital wanderers! I&apos;m
-                  Raka, charting my course through the captivating realms of
-                  technology and innovation, all while calling the lively city
-                  of Balikpapan in East Kalimantan, Indonesia, my home base.
-                  Strapping in with an Electrical Engineering major from the
-                  vibrant halls of Universitas Balikpapan, my heartbeat syncs
-                  with the beats of Artificial Intelligence, Mobile Development,
-                  and Web Development. Slide into my tech playground, where I
-                  groove with Flutter and React Native for Mobile Development,
-                  and dance through the digital spaces with ReactJS and NextJS
-                  for Web Development. HTML and CSS are my trusty sidekicks,
-                  always ready to set the stage. But hey, I&apos;m not just a
-                  digital maestro – I&apos;ve got my hands dirty (with pixels,
-                  of course!) in the world of 3D printing. When I&apos;m not
-                  coding up a storm, catch me crafting 3D printed electrical
-                  tools as my not-so-secret hobby. This website is more than
-                  just pixels on a screen; it&apos;s a peek into my journey
-                  through circuits, code, and creativity. So, buckle up and join
-                  the ride – let&apos;s explore the funkier side of tech
-                  together!
+                  Hey there, tech aficionados and digital wanderers! I&apos;m Raka from Balikpapan, East Kalimantan, Indonesia. With an Electrical Engineering degree from Universitas Balikpapan, I’m passionate about AI, Mobile Development, and Web Development. I groove with Flutter and React Native for mobile, and dance through the web with ReactJS and NextJS, with HTML and CSS as my trusty sidekicks. Beyond coding, I dive into 3D printing, crafting electrical tools as a hobby. This website is my journey through circuits, code, and creativity. Buckle up and explore the funky side of tech with me!
                 </p>
-                <p
+                {/* <p className="text"
                   style={
                     {
                       marginTop: "10px",
@@ -211,7 +195,7 @@ const Home: React.FC = () => {
                     } as React.CSSProperties
                   }
                 >
-                  My Specialty
+                  Programming Language
                 </p>
                 <div
                   style={
@@ -225,6 +209,22 @@ const Home: React.FC = () => {
                     } as React.CSSProperties
                   }
                 >
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      src="/html.png"
+                      alt="dart"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      src="/css.png"
+                      alt="dart"
+                    />
+                  </div>
                   <div className="skillLogo">
                     <Image
                       width={30}
@@ -258,6 +258,249 @@ const Home: React.FC = () => {
                       height={30}
                       src="/arduino_logo.png"
                       alt="arduino"
+                    />
+                  </div>
+                </div> */}
+                <p className="text"
+                  style={
+                    {
+                      marginTop: "10px",
+                      marginBottom: "10px",
+                      fontWeight: "bolder",
+                      textAlign: windowSize.width <= 1000 ? "center" : "start",
+                    } as React.CSSProperties
+                  }
+                >
+                  Front-End
+                </p>
+                <div
+                  style={
+                    {
+                      display: "flex",
+                      alignContent: "center",
+                      justifyContent:
+                        windowSize.width <= 1000 ? "center" : "start",
+                      alignItems: "center",
+                      flexDirection: "row",
+                    } as React.CSSProperties
+                  }
+                >
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "cover"
+                      }}
+                      src="/reactjs.png"
+                      alt="react"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "cover"
+                      }}
+                      src="/nextjs.png"
+                      alt="nextjs"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "cover"
+                      }}
+                      src="/flutter.png"
+                      alt="flutter"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "cover"
+                      }}
+                      src="/wordpress.png"
+                      alt="wordpress"
+                    />
+                  </div>
+                </div>
+                <p className="text"
+                  style={
+                    {
+                      marginTop: "10px",
+                      marginBottom: "10px",
+                      fontWeight: "bolder",
+                      textAlign: windowSize.width <= 1000 ? "center" : "start",
+                    } as React.CSSProperties
+                  }
+                >
+                  Back-End
+                </p>
+                <div
+                  style={
+                    {
+                      display: "flex",
+                      alignContent: "center",
+                      justifyContent:
+                        windowSize.width <= 1000 ? "center" : "start",
+                      alignItems: "center",
+                      flexDirection: "row",
+                    } as React.CSSProperties
+                  }
+                >
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "fill"
+                      }}
+                      src="/fastapi.png"
+                      alt="fastapi"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "fill"
+                      }}
+                      src="/nestjs.jpg"
+                      alt="nestjs"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "cover"
+                      }}
+                      src="/gin-gonic.jpg"
+                      alt="gin-gonic"
+                    />
+                  </div>
+                </div>
+                <p className="text"
+                  style={
+                    {
+                      marginTop: "10px",
+                      marginBottom: "10px",
+                      fontWeight: "bolder",
+                      textAlign: windowSize.width <= 1000 ? "center" : "start",
+                    } as React.CSSProperties
+                  }
+                >
+                  Artificial Intelligence
+                </p>
+                <div
+                  style={
+                    {
+                      display: "flex",
+                      alignContent: "center",
+                      justifyContent:
+                        windowSize.width <= 1000 ? "center" : "start",
+                      alignItems: "center",
+                      flexDirection: "row",
+                    } as React.CSSProperties
+                  }
+                >
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "fill"
+                      }}
+                      src="/tensorflow.png"
+                      alt="tensorflow"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "fill"
+                      }}
+                      src="/keras.png"
+                      alt="keras"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "cover"
+                      }}
+                      src="/pytorch.png"
+                      alt="pytorch"
+                    />
+                  </div>
+                </div>
+                <p className="text"
+                  style={
+                    {
+                      marginTop: "10px",
+                      marginBottom: "10px",
+                      fontWeight: "bolder",
+                      textAlign: windowSize.width <= 1000 ? "center" : "start",
+                    } as React.CSSProperties
+                  }
+                >
+                  Database
+                </p>
+                <div
+                  style={
+                    {
+                      display: "flex",
+                      alignContent: "center",
+                      justifyContent:
+                        windowSize.width <= 1000 ? "center" : "start",
+                      alignItems: "center",
+                      flexDirection: "row",
+                    } as React.CSSProperties
+                  }
+                >
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "fill"
+                      }}
+                      src="/postgresql.png"
+                      alt="postgresql"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "fill"
+                      }}
+                      src="/mongodb.png"
+                      alt="mongodb"
+                    />
+                  </div>
+                  <div className="skillLogo">
+                    <Image
+                      width={30}
+                      height={30}
+                      style={{
+                        objectFit: "cover"
+                      }}
+                      src="/firebase.png"
+                      alt="firebase"
                     />
                   </div>
                 </div>
@@ -325,11 +568,11 @@ const Home: React.FC = () => {
                     >
                       <BsGithub
                         size={30}
+                        className="text"
                         style={
                           {
                             marginRight: "15px",
                             marginLeft: "45px",
-                            color: "black",
                           } as React.CSSProperties
                         }
                       />
@@ -341,10 +584,10 @@ const Home: React.FC = () => {
                     >
                       <BsInstagram
                         size={30}
+                        className="text"
                         style={
                           {
                             marginRight: "15px",
-                            color: "black",
                           } as React.CSSProperties
                         }
                       />
@@ -356,10 +599,10 @@ const Home: React.FC = () => {
                     >
                       <BsLinkedin
                         size={30}
+                        className="text"
                         style={
                           {
                             marginRight: "15px",
-                            color: "black",
                           } as React.CSSProperties
                         }
                       />

@@ -1,8 +1,8 @@
-import { Project } from "@/models/projects_model";
+import { ProjectModel } from "@/models/projects_model";
 import Image from "next/image";
 
 type ProjectCardProps = {
-  project: Project;
+  project: ProjectModel;
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
@@ -13,7 +13,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       rel="noopener noreferrer"
       style={{ textDecoration: "none" } as React.CSSProperties}
     >
-      <div
+      <div 
+        className="text"
         style={
           {
             display: "flex",
@@ -25,7 +26,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             border: "1px solid var(--color-border)",
             boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
             marginRight: "15px",
-            color: "black",
           } as React.CSSProperties
         }
       >

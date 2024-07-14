@@ -16,6 +16,7 @@ const Contact: React.FC = () => {
     <BaseLayout>
       <div className="home">
         <h2
+          className="text"
           style={
             {
               marginBottom: "20px",
@@ -27,8 +28,9 @@ const Contact: React.FC = () => {
           Contacts
         </h2>
         <p
+          className="description"
           style={
-            { color: "#545454", textAlign: "justify" } as React.CSSProperties
+            { textAlign: "justify" } as React.CSSProperties
           }
         >
           Stay connected and drop me a line! Whether you&apos;re looking to chat

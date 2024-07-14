@@ -10,10 +10,22 @@ interface BaseLayoutProps {
 const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const toggleDarkMode = () => {
+    if (isDarkMode) {
+      document.body.classList.remove('dark-mode');
+      localStorage.removeItem('theme');
+    } else {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark-mode');
+    }
+    setIsDarkMode(!isDarkMode);
+  };
   useEffect(() => {
     // Check if the value is already in localStorage
     const cachedIsMobile = localStorage.getItem("isMobile");
+
+    toggleDarkMode()
 
     if (cachedIsMobile !== null) {
       setIsMobile(JSON.parse(cachedIsMobile));
@@ -31,6 +43,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
         localStorage.setItem("isMobile", JSON.stringify(isMobileDevice));
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading) {

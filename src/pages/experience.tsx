@@ -43,7 +43,7 @@ const Experience: React.FC = () => {
           </div>
         ) : (
           <div>
-            <h2
+            <h2 className="text"
               style={
                 {
                   marginBottom: "20px",
@@ -70,6 +70,7 @@ const Experience: React.FC = () => {
               ))}
             </div>
             <h2
+            className="text"
               style={
                 {
                   marginBottom: "20px",

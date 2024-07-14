@@ -25,6 +25,7 @@ export default function EducationCard({
     >
       <div>
         <div
+          className="text"
           style={
             {
               fontSize: "medium",
@@ -36,6 +37,7 @@ export default function EducationCard({
           {educationExperience.school_name}
         </div>
         <div
+          className="text"
           style={
             {
               fontSize: "12px",
@@ -45,6 +47,7 @@ export default function EducationCard({
           {educationExperience.major}
         </div>
         <div
+          className="text"
           style={
             {
               fontSize: "12px",
@@ -67,6 +70,7 @@ export default function EducationCard({
           style={
             {
               borderRadius: "5px",
+              backgroundColor: "white",
             } as React.CSSProperties
           }
           width={50}

@@ -1,4 +1,4 @@
-export type Project = {
+export type ProjectModel = {
   name: string;
   date: string;
   imagePath: string;

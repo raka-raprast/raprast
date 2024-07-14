@@ -1,9 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
 :root {
-  --color-bg: #fff;
+  --color-primary: #7fc7d9;
+  --color-primary-shadow: #45798C;
+  --color-bg: #F0FEFF;
   --color-border: #e5e7eb;
   --color-sidebar-item: #f3f4f6;
+  --color-text-p: #252525;
+  --color-text-desc: #545454;
+  --color-footer: rgb(120, 120, 120);
+}
+
+.dark-mode {
+  --color-primary: #6FACBB;
+  --color-primary-shadow: #D2E4E7;
+  --color-bg: #27373C;
+  --color-border: #4E4E4E;
+  --color-sidebar-item: #3C3C3C;
+  --color-text-p: #e5e7eb;
+  --color-text-desc: #c1c1c1;
+  --color-footer: rgb(158, 158, 158);
 }
 
 * {
@@ -13,7 +29,7 @@
 }
 
 body {
-  background-color: #eee;
+  background-color: var(--color-bg);
   font-family: "Roboto", sans-serif;
 }
 
@@ -21,14 +37,14 @@ body {
   display: flex;
   position: relative;
   gap: 2rem;
-  background-color: #7fc7d9;
+  background-color: var(--color-primary);
 }
 
 .layout__main-content {
   flex-grow: 1;
   margin: 15px 15px 15px 0px;
-  box-shadow: 1px 1px 4px 1px #598a96;
-  background-color: white;
+  box-shadow: 1px 1px 4px 1px var(--color-primary-shadow);
+  background-color: var(--color-bg);
   border-radius: 5px;
 }
 
@@ -38,7 +54,7 @@ body {
   justify-content: center;
   text-align: center;
   font-size: small;
-  color: rgb(120, 120, 120);
+  color: var(--color-footer);
   border-top: 2px solid rgb(208, 208, 208);
   height: 50px;
   flex-shrink: 0;
@@ -46,17 +62,17 @@ body {
 
 .layout__main-content_mobile {
   flex-grow: 1;
-  background-color: white;
+  background-color: var(--color-bg);
 }
 
 .sidebar__wrapper {
   position: relative;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px #598a96;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px var(--color-primary-shadow);
 }
 
 .sidebar__wrapper_mobile {
   position: fixed;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px #598a96;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px var(--color-primary-shadow);
 }
 
 .sidebar {
@@ -83,7 +99,7 @@ body {
   height: 3.5rem;
   object-fit: contain;
   border-radius: 50%;
-  background-color: #7fc7d9;
+  background-color: var(--color-primary);
 }
 
 .sidebar__logo-name {
@@ -99,7 +115,7 @@ body {
   display: inline-block;
   font-size: 1rem;
   text-decoration: none;
-  color: #000;
+  color: var(--color-text-p);
   padding: 0.8rem 1rem;
   display: flex;
   background-color: var(--color-sidebar-item);
@@ -107,9 +123,13 @@ body {
   border-radius: 0.8rem;
 }
 
+.sidebar__link:hover {
+  cursor: pointer;
+}
+
 .sidebar__link--active {
-  color: #fff;
-  background-color: #7fc7d9;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
 }
 
 .sidebar__icon {
@@ -154,8 +174,8 @@ body {
   cursor: pointer;
   transform: translateX(50%);
   font-size: 1.1rem;
-  box-shadow: 1px 1px 2px 1px #7fc7d9;
-  color: #7fc7d9;
+  box-shadow: 1px 1px 2px 1px var(--color-primary);
+  color: var(--color-primary);
 }
 
 .btn {
@@ -174,10 +194,11 @@ body {
   cursor: pointer;
   transform: translateX(50%);
   font-size: 1.1rem;
+  color: var(--color-primary);
 }
 
 .avatar {
-  background-color: #7fc7d9;
+  background-color: var(--color-primary);
   border-radius: 12px;
   object-fit: cover;
   object-position: center;
@@ -187,7 +208,7 @@ body {
 }
 
 .avatarSmallScreen {
-  background-color: #7fc7d9;
+  background-color: var(--color-primary);
   border-radius: 12px;
   object-fit: cover;
   object-position: center;
@@ -199,18 +220,28 @@ body {
 .name {
   padding: "0px 0px 15px 0px";
   font-size: x-large;
+  color: var(--color-text-p);
+}
+
+.text {
+  color: var(--color-text-p);
+}
+
+.description {
+  color: var(--color-text-desc);
 }
 
 .skillLogo {
   margin-right: 15px;
   border-radius: 50%;
-  box-shadow: 1px 1px 2px 1px #7fc7d9;
+  box-shadow: 1px 1px 2px 1px var(--color-primary);
   width: 45px;
   height: 45px;
   padding: 5px;
   justify-content: center;
   align-items: center;
   display: flex;
+  background-color: white;
 }
 
 .loadingBar {
@@ -257,6 +288,6 @@ body {
     cursor: pointer;
     transform: translateX(50%);
     font-size: 1.1rem;
-    color: #7fc7d9;
+    color: var(--color-primary);
   }
 }

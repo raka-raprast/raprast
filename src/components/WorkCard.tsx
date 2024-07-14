@@ -23,6 +23,7 @@ export default function WorkCard({ workExperience }: WorkCardProps) {
     >
       <div>
         <div
+          className="text"
           style={
             {
               fontSize: "medium",
@@ -34,6 +35,7 @@ export default function WorkCard({ workExperience }: WorkCardProps) {
           {workExperience.company_name}
         </div>
         <div
+          className="text"
           style={
             {
               fontSize: "12px",
@@ -43,6 +45,7 @@ export default function WorkCard({ workExperience }: WorkCardProps) {
           {workExperience.job_title}
         </div>
         <div
+          className="text"
           style={
             {
               fontSize: "12px",
@@ -64,6 +67,7 @@ export default function WorkCard({ workExperience }: WorkCardProps) {
         <Image
           style={
             {
+              backgroundColor: "white",
               borderRadius: "5px",
             } as React.CSSProperties
           }

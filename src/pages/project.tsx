@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import BaseLayout from "@/components/BaseLayout";
-import { Project } from "@/models/projects_model";
+import { ProjectModel } from "@/models/projects_model";
 import ProjectCard from "@/components/ProjectCard";
 import ReactLoading from "react-loading";
 
 const Project: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [projectData, setProjectData] = useState<Project[]>([]);
+  const [projectData, setProjectData] = useState<ProjectModel[]>([]);
 
   useEffect(() => {
     import("@/data/projects.json").then((data) => {
@@ -29,6 +29,7 @@ const Project: React.FC = () => {
         ) : (
           <div>
             <h2
+              className="text"
               style={
                 {
                   marginBottom: "20px",
@@ -40,9 +41,9 @@ const Project: React.FC = () => {
               Projects
             </h2>
             <p
+              className="description"
               style={
                 {
-                  color: "#545454",
                   textAlign: "justify",
                 } as React.CSSProperties
               }

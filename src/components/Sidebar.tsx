@@ -5,8 +5,10 @@ import {
   BsBriefcase,
   BsJournal,
   BsLaptop,
+  BsMoon,
   BsPeople,
   BsPhone,
+  BsSun,
   BsWrench,
 } from "react-icons/bs";
 import { TiContacts } from "react-icons/ti";
@@ -48,10 +50,21 @@ const Sidebar = () => {
   const router = useRouter();
   const { isCollapsed, toggleSidebarCollapse } = useContext(SidebarContext);
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
-
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const toggleDarkMode = () => {
+    if (isDarkMode) {
+      document.body.classList.remove('dark-mode');
+      localStorage.removeItem('theme');
+    } else {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark-mode');
+    }
+    setIsDarkMode(!isDarkMode);
+  };
   useEffect(() => {
     // Check if the value is already in localStorage
     const cachedIsMobile = localStorage.getItem("isMobile");
+
 
     if (cachedIsMobile !== null) {
       setIsMobile(JSON.parse(cachedIsMobile));
@@ -67,6 +80,8 @@ const Sidebar = () => {
         localStorage.setItem("isMobile", JSON.stringify(isMobileDevice));
       }
     }
+    toggleDarkMode()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (isMobile) {
     return (
@@ -101,11 +116,10 @@ const Sidebar = () => {
                       <Link
                         href={href}
                         passHref
-                        className={`sidebar__link ${
-                          router.pathname === href
-                            ? "sidebar__link--active"
-                            : ""
-                        }`}
+                        className={`sidebar__link ${router.pathname === href
+                          ? "sidebar__link--active"
+                          : ""
+                          }`}
                       >
                         <span className="sidebar__icon">
                           <Icon />
@@ -116,6 +130,13 @@ const Sidebar = () => {
                   );
                 })}
               </ul>
+              <div
+                className="sidebar__link"
+                onClick={toggleDarkMode}>
+                <span className="sidebar__icon">
+                  {isDarkMode ? <BsMoon /> : <BsSun />}
+                </span>
+              </div>
             </aside>
           </div>
         ) : null}
@@ -139,26 +160,39 @@ const Sidebar = () => {
           />
           <p className="sidebar__logo-name">Raka Prasetyo</p>
         </div>
-        <ul className="sidebar__list">
-          {sidebarItems.map(({ name, href, icon: Icon }) => {
-            return (
-              <li className="sidebar__item" key={name}>
-                <Link
-                  href={href}
-                  passHref
-                  className={`sidebar__link ${
-                    router.pathname === href ? "sidebar__link--active" : ""
-                  }`}
-                >
-                  <span className="sidebar__icon">
-                    <Icon />
-                  </span>
-                  <span className="sidebar__name">{name}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          height: "80%",
+        } as React.CSSProperties}>
+          <ul className="sidebar__list">
+            {sidebarItems.map(({ name, href, icon: Icon }) => {
+              return (
+                <li className="sidebar__item" key={name}>
+                  <Link
+                    href={href}
+                    passHref
+                    className={`sidebar__link ${router.pathname === href ? "sidebar__link--active" : ""
+                      }`}
+                  >
+                    <span className="sidebar__icon">
+                      <Icon />
+                    </span>
+                    <span className="sidebar__name">{name}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div
+          className="sidebar__link"
+          onClick={toggleDarkMode}>
+          <span className="sidebar__icon">
+            {isDarkMode ? <BsMoon /> : <BsSun />}
+          </span>
+        </div>
       </aside>
     </div>
   );
