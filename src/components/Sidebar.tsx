@@ -192,6 +192,7 @@ const Sidebar = () => {
           <span className="sidebar__icon">
             {isDarkMode ? <BsMoon /> : <BsSun />}
           </span>
+          <span className="sidebar__name">{isDarkMode ? "Dark Mode" : "Light Mode"}</span>
         </div>
       </aside>
     </div>
