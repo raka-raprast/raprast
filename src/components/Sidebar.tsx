@@ -62,25 +62,29 @@ const Sidebar = () => {
     setIsDarkMode(!isDarkMode);
   };
   useEffect(() => {
-    // Check if the value is already in localStorage
-    const cachedIsMobile = localStorage.getItem("isMobile");
+    // Check if the dark mode value is already in localStorage
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark-mode') {
+      document.body.classList.add('dark-mode');
+      setIsDarkMode(true);
+    }
 
-
+    // Check if the isMobile value is already in localStorage
+    const cachedIsMobile = localStorage.getItem('isMobile');
     if (cachedIsMobile !== null) {
       setIsMobile(JSON.parse(cachedIsMobile));
     } else {
       // If not found in localStorage, determine and set isMobile
-      if (typeof window !== "undefined") {
+      if (typeof window !== 'undefined') {
         const userAgent = window.navigator.userAgent;
         const isMobileDevice = /Mobi|Android/i.test(userAgent);
-
         setIsMobile(isMobileDevice);
 
         // Save to localStorage for future use
-        localStorage.setItem("isMobile", JSON.stringify(isMobileDevice));
+        localStorage.setItem('isMobile', JSON.stringify(isMobileDevice));
       }
     }
-    toggleDarkMode()
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (isMobile) {

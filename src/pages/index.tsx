@@ -9,6 +9,7 @@ import {
   ReactCompareSliderImage,
 } from "react-compare-slider";
 import ReactLoading from "react-loading";
+import { Tooltip } from "@mui/material";
 
 const Home: React.FC = () => {
   const isClient = typeof window !== "undefined"; // Check if running on the client side
@@ -285,50 +286,58 @@ const Home: React.FC = () => {
                     } as React.CSSProperties
                   }
                 >
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "cover"
-                      }}
-                      src="/reactjs.png"
-                      alt="react"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "cover"
-                      }}
-                      src="/nextjs.png"
-                      alt="nextjs"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "cover"
-                      }}
-                      src="/flutter.png"
-                      alt="flutter"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "cover"
-                      }}
-                      src="/wordpress.png"
-                      alt="wordpress"
-                    />
-                  </div>
+                  <Tooltip title="ReactJS">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "cover"
+                        }}
+                        src="/reactjs.png"
+                        alt="react"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="NextJS">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "cover"
+                        }}
+                        src="/nextjs.png"
+                        alt="nextjs"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="Flutter">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "cover"
+                        }}
+                        src="/flutter.png"
+                        alt="flutter"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="Wordpress">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "cover"
+                        }}
+                        src="/wordpress.png"
+                        alt="wordpress"
+                      />
+                    </div>
+                  </Tooltip>
                 </div>
                 <p className="text"
                   style={
@@ -354,39 +363,45 @@ const Home: React.FC = () => {
                     } as React.CSSProperties
                   }
                 >
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "fill"
-                      }}
-                      src="/fastapi.png"
-                      alt="fastapi"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "fill"
-                      }}
-                      src="/nestjs.jpg"
-                      alt="nestjs"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "cover"
-                      }}
-                      src="/gin-gonic.jpg"
-                      alt="gin-gonic"
-                    />
-                  </div>
+                  <Tooltip title="FastAPI">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "fill"
+                        }}
+                        src="/fastapi.png"
+                        alt="fastapi"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="NestJS">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "cover"
+                        }}
+                        src="/nestjs.png"
+                        alt="nestjs"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="Gin-Gonic">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "cover"
+                        }}
+                        src="/gin-gonic.jpg"
+                        alt="gin-gonic"
+                      />
+                    </div>
+                  </Tooltip>
                 </div>
                 <p className="text"
                   style={
@@ -412,39 +427,45 @@ const Home: React.FC = () => {
                     } as React.CSSProperties
                   }
                 >
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "fill"
-                      }}
-                      src="/tensorflow.png"
-                      alt="tensorflow"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "fill"
-                      }}
-                      src="/keras.png"
-                      alt="keras"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "cover"
-                      }}
-                      src="/pytorch.png"
-                      alt="pytorch"
-                    />
-                  </div>
+                  <Tooltip title="TensorFlow">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "fill"
+                        }}
+                        src="/tensorflow.png"
+                        alt="tensorflow"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="Keras">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "fill"
+                        }}
+                        src="/keras.png"
+                        alt="keras"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="PyTorch">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "cover"
+                        }}
+                        src="/pytorch.png"
+                        alt="pytorch"
+                      />
+                    </div>
+                  </Tooltip>
                 </div>
                 <p className="text"
                   style={
@@ -470,39 +491,45 @@ const Home: React.FC = () => {
                     } as React.CSSProperties
                   }
                 >
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "fill"
-                      }}
-                      src="/postgresql.png"
-                      alt="postgresql"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "fill"
-                      }}
-                      src="/mongodb.png"
-                      alt="mongodb"
-                    />
-                  </div>
-                  <div className="skillLogo">
-                    <Image
-                      width={30}
-                      height={30}
-                      style={{
-                        objectFit: "cover"
-                      }}
-                      src="/firebase.png"
-                      alt="firebase"
-                    />
-                  </div>
+                  <Tooltip title="PostgreSQL">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "fill"
+                        }}
+                        src="/postgresql.png"
+                        alt="postgresql"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="MongoDB">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "fill"
+                        }}
+                        src="/mongodb.png"
+                        alt="mongodb"
+                      />
+                    </div>
+                  </Tooltip>
+                  <Tooltip title="Firebase">
+                    <div className="skillLogo">
+                      <Image
+                        width={30}
+                        height={30}
+                        style={{
+                          objectFit: "cover"
+                        }}
+                        src="/firebase.png"
+                        alt="firebase"
+                      />
+                    </div>
+                  </Tooltip>
                 </div>
               </div>
 

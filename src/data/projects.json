@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "name": "NestJS JWT API",
+      "date": "Apr 2024",
+      "imagePath": "/typescript_logo.png",
+      "description": "NestJS API authentication JWT complete with CRUD to create profile",
+      "link": "https://github.com/raka-raprast/nest-jwt"
+    },
+    {
       "name": "Hybrid KNN Recommendation",
       "date": "Jun 2023",
       "imagePath": "/python_logo.png",
@@ -48,6 +55,13 @@
       "imagePath": "/python_logo.png",
       "description": "The prospect of using machine learning to predicting a heart disease",
       "link": "https://github.com/raka-raprast/heart-disease-prediction"
+    },
+    {
+      "name": "3D Printed Headphone",
+      "date": "Jan 2021",
+      "imagePath": "/electrical.jpg",
+      "description": "Experimental project to create DIY 3D printed headphone to replace my old headphone at home.",
+      "link": "https://www.instructables.com/DIY-3D-Printed-Headphone/"
     },
     {
       "name": "Solar Powered Park Bench",
