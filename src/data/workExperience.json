@@ -1,10 +1,10 @@
 {
   "workExperience": [{
     "company_name": "YouApp",
-    "job_title": "Lead Front-End Developer",
+    "job_title": "Full Stack Lead Developer",
     "start_date": "Jun 2024",
     "end_date": "Present",
-    "skills": ["Flutter", "Typescript", "NextJS"],
+    "skills": ["Flutter", "Typescript", "NextJS", "NestJS", "MongoDB", "RabbitMQ"],
     "imagePath": "/youapp.jpg"
   },
     {

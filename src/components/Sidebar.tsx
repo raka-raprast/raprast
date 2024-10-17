@@ -51,6 +51,7 @@ const Sidebar = () => {
   const { isCollapsed, toggleSidebarCollapse } = useContext(SidebarContext);
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isDarkLoading, setIsDarkLoading] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // Default to light mode
   const toggleDarkMode = () => {
     if (isDarkMode) {
@@ -65,11 +66,13 @@ const Sidebar = () => {
 
   useEffect(() => {
     // Check if the dark mode value is already in localStorage
+    setIsDarkLoading(true);
     const theme = localStorage.getItem('theme');
     if (theme === 'dark-mode') {
       document.body.classList.add('dark-mode');
       setIsDarkMode(true);
     }
+    setIsDarkLoading(false);
 
     // Check if the isMobile value is already in localStorage
     const cachedIsMobile = localStorage.getItem('isMobile');
@@ -198,7 +201,7 @@ const Sidebar = () => {
           className="sidebar__link"
           onClick={toggleDarkMode}>
           <span className="sidebar__icon">
-            {isDarkMode ? <BsMoon /> : <BsSun />}
+            {isDarkLoading ? null : isDarkMode ? <BsMoon /> : <BsSun />}
           </span>
           <span className="sidebar__name">{isDarkMode ? "Dark Mode" : "Light Mode"}</span>
         </div>

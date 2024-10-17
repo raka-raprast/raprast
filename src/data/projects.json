@@ -1,6 +1,27 @@
 {
   "projects": [
     {
+      "name": "MKPlace Flutter",
+      "date": "Oct 2024",
+      "imagePath": "/dart_logo.png",
+      "description": "Marketplace App utilising Webview from NextJS web app and NestJS API",
+      "link": "https://github.com/raka-raprast/mkplace-flutter"
+    },
+    {
+      "name": "MKPlace NextJS",
+      "date": "Oct 2024",
+      "imagePath": "/typescript_logo.png",
+      "description": "Marketplace web app with NestJS API",
+      "link": "https://github.com/raka-raprast/mkplace-nextjs"
+    },
+    {
+      "name": "MKPlace NestJS",
+      "date": "Oct 2024",
+      "imagePath": "/typescript_logo.png",
+      "description": "Marketplace App NestJS API",
+      "link": "https://github.com/raka-raprast/mkplace-api"
+    },
+    {
       "name": "NestJS JWT API",
       "date": "Apr 2024",
       "imagePath": "/typescript_logo.png",
