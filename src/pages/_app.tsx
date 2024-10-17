@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 
 interface AppProps {
   Component: React.ElementType;
-  pageProps: Record<string, any>; // You can replace 'Record<string, any>' with a more specific type if you have one for pageProps
+  pageProps: Record<string, any>;
 }
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {

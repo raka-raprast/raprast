@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
 :root {
-  --color-primary: #7fc7d9;
+  --color-primary: #007A8D;
   --color-primary-shadow: #45798C;
   --color-bg: #F0FEFF;
   --color-border: #e5e7eb;
@@ -12,7 +12,7 @@
 }
 
 .dark-mode {
-  --color-primary: #6FACBB;
+  --color-primary: #60A5B1;
   --color-primary-shadow: #D2E4E7;
   --color-bg: #27373C;
   --color-border: #4E4E4E;

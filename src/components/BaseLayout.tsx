@@ -10,7 +10,7 @@ interface BaseLayoutProps {
 const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // Default to light mode
   const toggleDarkMode = () => {
     if (isDarkMode) {
       document.body.classList.remove('dark-mode');
@@ -50,6 +50,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   if (isLoading) {
     return (
       <div className="loadingBarFullScreen">
@@ -57,6 +58,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
       </div>
     );
   }
+
   return (
     <div className="layout">
       <Head>

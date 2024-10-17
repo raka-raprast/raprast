@@ -50,7 +50,8 @@ const Sidebar = () => {
   const router = useRouter();
   const { isCollapsed, toggleSidebarCollapse } = useContext(SidebarContext);
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // Default to light mode
   const toggleDarkMode = () => {
     if (isDarkMode) {
       document.body.classList.remove('dark-mode');
@@ -61,6 +62,7 @@ const Sidebar = () => {
     }
     setIsDarkMode(!isDarkMode);
   };
+
   useEffect(() => {
     // Check if the dark mode value is already in localStorage
     const theme = localStorage.getItem('theme');
@@ -73,12 +75,14 @@ const Sidebar = () => {
     const cachedIsMobile = localStorage.getItem('isMobile');
     if (cachedIsMobile !== null) {
       setIsMobile(JSON.parse(cachedIsMobile));
+      setIsLoading(false);
     } else {
       // If not found in localStorage, determine and set isMobile
       if (typeof window !== 'undefined') {
         const userAgent = window.navigator.userAgent;
         const isMobileDevice = /Mobi|Android/i.test(userAgent);
         setIsMobile(isMobileDevice);
+        setIsLoading(false);
 
         // Save to localStorage for future use
         localStorage.setItem('isMobile', JSON.stringify(isMobileDevice));
