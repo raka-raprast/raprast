@@ -19,7 +19,8 @@ export default function EducationCard({
           padding: "15px",
           borderRadius: "6px",
           border: "1px solid var(--color-border)",
-          boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
+          // boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
+          boxShadow: "0px 1px 1px var(--gradient-start)",
         } as React.CSSProperties
       }
     >
@@ -71,6 +72,7 @@ export default function EducationCard({
             {
               borderRadius: "5px",
               backgroundColor: "white",
+              boxShadow: "0px 1px 1px var(--gradient-start)",
             } as React.CSSProperties
           }
           width={50}

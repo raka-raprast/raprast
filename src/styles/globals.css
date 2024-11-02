@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu%20Mono:wght@300;400&display=swap");
+
+@font-face {
+  font-family: 'Mbilan';
+  src: url('/fonts/mbilan.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --color-primary: #007A8D;
@@ -9,6 +16,11 @@
   --color-text-p: #252525;
   --color-text-desc: #545454;
   --color-footer: rgb(120, 120, 120);
+  --color-bg: #F0FEFF;
+  --gradient-start: #1A262A;
+  --gradient-end: #3B4B51;
+  --gradient-start-inverse: #CDEDFE;
+  --gradient-end-inverse: #c8d0d5;
 }
 
 .dark-mode {
@@ -20,6 +32,10 @@
   --color-text-p: #e5e7eb;
   --color-text-desc: #c1c1c1;
   --color-footer: rgb(158, 158, 158);
+  --gradient-start: #CDEDFE;
+  --gradient-end: #c8d0d5;
+  --gradient-start-inverse: #1A262A;
+  --gradient-end-inverse: #3B4B51;
 }
 
 * {
@@ -30,21 +46,23 @@
 
 body {
   background-color: var(--color-bg);
-  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu Mono", sans-serif;
 }
 
 .layout {
   display: flex;
   position: relative;
   gap: 2rem;
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  /* background-color: var(--color-primary); */
 }
 
 .layout__main-content {
   flex-grow: 1;
-  margin: 15px 15px 15px 100px;
+  margin: 15px 15px 15px 0px;
   box-shadow: 1px 1px 4px 1px var(--color-primary-shadow);
-  background-color: var(--color-bg);
+  /* background-color: var(--color-bg); */
+  background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse));
   border-radius: 5px;
 }
 
@@ -62,14 +80,15 @@ body {
 
 .layout__main-content_mobile {
   flex-grow: 1;
-  background-color: var(--color-bg);
+  /* background-color: var(--color-bg); */
+  background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse));
 }
 
 .sidebar__wrapper {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
-  margin-right: 15px;
+  /* margin-right: 15px; */
   height: 100vh;
   z-index: 1000; 
   box-shadow: 0.5px 0.5px 0.5px 0.5px var(--color-primary-shadow);
@@ -84,6 +103,7 @@ body {
   width: 17rem;
   height: 100%;
   background-color: var(--color-bg);
+  background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse));
   padding: 1rem;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
   overflow: hidden;
@@ -124,7 +144,8 @@ body {
   color: var(--color-text-p);
   padding: 0.8rem 1rem;
   display: flex;
-  background-color: var(--color-sidebar-item);
+  box-shadow: 0px 1px 1px var(--gradient-start);
+  /* background-color: var(--color-sidebar-item); */
   margin-bottom: 1rem;
   border-radius: 0.8rem;
 }
@@ -204,7 +225,8 @@ body {
 }
 
 .avatar {
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   border-radius: 12px;
   object-fit: cover;
   object-position: center;
@@ -240,7 +262,8 @@ body {
 .skillLogo {
   margin-right: 15px;
   border-radius: 50%;
-  box-shadow: 1px 1px 2px 1px var(--color-primary);
+  /* box-shadow: 1px 1px 2px 1px var(--color-primary); */
+  box-shadow: 0px 1px 1px var(--gradient-start);
   width: 45px;
   height: 45px;
   padding: 5px;
@@ -270,6 +293,7 @@ body {
   /* background-color: #d20303; */
   align-items: center;
   border-radius: 4px;
+  box-shadow: 0px 1px 1px var(--gradient-start);
 }
 
 @media (max-width: 768px) {

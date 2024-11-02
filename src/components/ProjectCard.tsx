@@ -24,7 +24,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             padding: "15px",
             borderRadius: "6px",
             border: "1px solid var(--color-border)",
-            boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
+            // boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
+             boxShadow: "0px 1px 1px var(--gradient-start)",
             marginRight: "15px",
           } as React.CSSProperties
         }

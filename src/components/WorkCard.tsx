@@ -17,7 +17,7 @@ export default function WorkCard({ workExperience }: WorkCardProps) {
           padding: "15px",
           borderRadius: "6px",
           border: "1px solid var(--color-border)",
-          boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
+          boxShadow: "0px 1px 1px var(--gradient-start)",
         } as React.CSSProperties
       }
     >
@@ -68,6 +68,7 @@ export default function WorkCard({ workExperience }: WorkCardProps) {
           style={
             {
               backgroundColor: "white",
+              boxShadow: "0px 1px 1px var(--gradient-start)",
               borderRadius: "5px",
             } as React.CSSProperties
           }

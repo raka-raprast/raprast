@@ -1,6 +1,7 @@
 import React from "react";
 import { SidebarProvider } from "@/context/SidebarContext";
 import "@/styles/globals.css";
+import { Oswald } from '@next/font/google';
 
 interface AppProps {
   Component: React.ElementType;

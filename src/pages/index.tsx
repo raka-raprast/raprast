@@ -77,6 +77,9 @@ const Home: React.FC = () => {
                     position={100}
                     itemOne={
                       <ReactCompareSliderImage
+                        style={{
+                          boxShadow: "0px 1px 1px var(--gradient-start-inverse)",
+                        }}
                         src="/ai_avatar.png"
                         alt="Image one"
                         width={140}
@@ -85,6 +88,9 @@ const Home: React.FC = () => {
                     }
                     itemTwo={
                       <ReactCompareSliderImage
+                        style={{
+                          boxShadow: "0px 1px 1px var(--gradient-start-inverse)",
+                        }}
                         src="/real_avatar.png"
                         alt="Image two"
                         width={140}
