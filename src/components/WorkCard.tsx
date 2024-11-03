@@ -8,18 +8,7 @@ type WorkCardProps = {
 export default function WorkCard({ workExperience }: WorkCardProps) {
   return (
     <div
-      style={
-        {
-          display: "flex",
-          flexDirection: "row",
-          marginBottom: "30px",
-          overflow: "hidden",
-          padding: "15px",
-          borderRadius: "6px",
-          border: "1px solid var(--color-border)",
-          boxShadow: "0px 1px 1px var(--gradient-start)",
-        } as React.CSSProperties
-      }
+      className="card"
     >
       <div>
         <div
@@ -64,7 +53,7 @@ export default function WorkCard({ workExperience }: WorkCardProps) {
           } as React.CSSProperties
         }
       >
-        <Image
+        {/* <Image
           style={
             {
               backgroundColor: "white",
@@ -76,7 +65,7 @@ export default function WorkCard({ workExperience }: WorkCardProps) {
           height={50}
           src={workExperience.imagePath}
           alt="work logo"
-        />
+        /> */}
       </div>
     </div>
   );

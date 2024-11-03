@@ -10,174 +10,180 @@ import {
 } from "react-icons/bs";
 import { MdFacebook, MdMail } from "react-icons/md";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Contact: React.FC = () => {
   return (
     <BaseLayout>
-      <div className="home">
-        <h2
-          className="text"
-          style={{
-            marginBottom: "20px",
-            paddingBottom: "5px",
-            borderBottom: "2px solid rgb(208, 208, 208)",
-          }}
-        >
-          Contacts
-        </h2>
-        <p className="description" style={{ textAlign: "justify" }}>
-          Stay connected and drop me a line! Whether you&apos;re looking to chat
-          about exciting opportunities, share innovative ideas, or just say
-          hello, the door to communication is wide open. Feel free to reach out
-          through the channels below. Let&apos;s create something awesome
-          together!
-        </p>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "start", marginTop: "10px" }}>
-          <a
-            href="https://github.com/raka-raprast"
-            target="_blank"
-            rel="noopener noreferrer"
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      ><div className="home">
+          <h2
+            className="text"
             style={{
-              textDecoration: "none",
-              marginBottom: "10px",
+              marginBottom: "20px",
+              paddingBottom: "5px",
+              borderBottom: "2px solid rgb(208, 208, 208)",
             }}
           >
-            <div
-              className="socmed_button"
+            Contacts
+          </h2>
+          <p className="description" style={{ textAlign: "justify" }}>
+            Stay connected and drop me a line! Whether you&apos;re looking to chat
+            about exciting opportunities, share innovative ideas, or just say
+            hello, the door to communication is wide open. Feel free to reach out
+            through the channels below. Let&apos;s create something awesome
+            together!
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "start", marginTop: "10px" }}>
+            <a
+              href="https://github.com/raka-raprast"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
-                backgroundColor: "#24292e",
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "10px 15px",
-                borderRadius: "5px",
+                textDecoration: "none",
+                marginBottom: "10px",
               }}
             >
-              <BsGithub
-                size={20}
+              <div
+                className="socmed_button"
                 style={{
-                  marginRight: "10px",
-                  color: "white",
+                  backgroundColor: "#24292e",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "10px 15px",
+                  borderRadius: "5px",
                 }}
-              />
-              <p style={{ color: "white", margin: 0 }}>GitHub</p>
-            </div>
-          </a>
-          <a
-            href="https://www.instagram.com/raka.raprast/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              textDecoration: "none",
-              marginBottom: "10px",
-            }}
-          >
-            <div
-              className="socmed_button"
+              >
+                <BsGithub
+                  size={20}
+                  style={{
+                    marginRight: "10px",
+                    color: "white",
+                  }}
+                />
+                <p style={{ color: "white", margin: 0 }}>GitHub</p>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/raka.raprast/"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
-                backgroundColor: "#515bd4",
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "10px 15px",
-                borderRadius: "5px",
+                textDecoration: "none",
+                marginBottom: "10px",
               }}
             >
-              <BsInstagram
-                size={20}
+              <div
+                className="socmed_button"
                 style={{
-                  marginRight: "10px",
-                  color: "white",
+                  backgroundColor: "#515bd4",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "10px 15px",
+                  borderRadius: "5px",
                 }}
-              />
-              <p style={{ color: "white", margin: 0 }}>Instagram</p>
-            </div>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/raka-raprast/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              textDecoration: "none",
-              marginBottom: "10px",
-            }}
-          >
-            <div
-              className="socmed_button"
+              >
+                <BsInstagram
+                  size={20}
+                  style={{
+                    marginRight: "10px",
+                    color: "white",
+                  }}
+                />
+                <p style={{ color: "white", margin: 0 }}>Instagram</p>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/raka-raprast/"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
-                backgroundColor: "#0077b5",
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "10px 15px",
-                borderRadius: "5px",
+                textDecoration: "none",
+                marginBottom: "10px",
               }}
             >
-              <BsLinkedin
-                size={20}
+              <div
+                className="socmed_button"
                 style={{
-                  marginRight: "10px",
-                  color: "white",
+                  backgroundColor: "#0077b5",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "10px 15px",
+                  borderRadius: "5px",
                 }}
-              />
-              <p style={{ color: "white", margin: 0 }}>LinkedIn</p>
-            </div>
-          </a>
-          <a
-            href="mailto:raprast.raka@gmail.com"
-            rel="noopener noreferrer"
-            style={{
-              textDecoration: "none",
-              marginBottom: "10px",
-            }}
-          >
-            <div
-              className="socmed_button"
+              >
+                <BsLinkedin
+                  size={20}
+                  style={{
+                    marginRight: "10px",
+                    color: "white",
+                  }}
+                />
+                <p style={{ color: "white", margin: 0 }}>LinkedIn</p>
+              </div>
+            </a>
+            <a
+              href="mailto:raprast.raka@gmail.com"
+              rel="noopener noreferrer"
               style={{
-                backgroundColor: "#d44638",
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "10px 15px",
-                borderRadius: "5px",
+                textDecoration: "none",
+                marginBottom: "10px",
               }}
             >
-              <MdMail
-                size={20}
+              <div
+                className="socmed_button"
                 style={{
-                  marginRight: "10px",
-                  color: "white",
+                  backgroundColor: "#d44638",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "10px 15px",
+                  borderRadius: "5px",
                 }}
-              />
-              <p style={{ color: "white", margin: 0 }}>Email</p>
-            </div>
-          </a>
-          <a
-            href="https://api.whatsapp.com/send/?phone=6281996255555"
-            rel="noopener noreferrer"
-            style={{
-              textDecoration: "none",
-              marginBottom: "10px",
-            }}
-          >
-            <div
-              className="socmed_button"
+              >
+                <MdMail
+                  size={20}
+                  style={{
+                    marginRight: "10px",
+                    color: "white",
+                  }}
+                />
+                <p style={{ color: "white", margin: 0 }}>Email</p>
+              </div>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6281996255555"
+              rel="noopener noreferrer"
               style={{
-                backgroundColor: "#128c7e",
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "10px 15px",
-                borderRadius: "5px",
+                textDecoration: "none",
+                marginBottom: "10px",
               }}
             >
-              <BsWhatsapp
-                size={20}
+              <div
+                className="socmed_button"
                 style={{
-                  marginRight: "10px",
-                  color: "white",
+                  backgroundColor: "#128c7e",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "10px 15px",
+                  borderRadius: "5px",
                 }}
-              />
-              <p style={{ color: "white", margin: 0 }}>WhatsApp</p>
-            </div>
-          </a>
-        </div>
-      </div>
+              >
+                <BsWhatsapp
+                  size={20}
+                  style={{
+                    marginRight: "10px",
+                    color: "white",
+                  }}
+                />
+                <p style={{ color: "white", margin: 0 }}>WhatsApp</p>
+              </div>
+            </a>
+          </div>
+        </div></motion.div>
+
       <div className="footer">© 2024 Raka Ramadhani Aulia Prasetyo</div>
     </BaseLayout>
   );

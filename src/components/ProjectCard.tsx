@@ -14,21 +14,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       style={{ textDecoration: "none" } as React.CSSProperties}
     >
       <div 
-        className="text"
-        style={
-          {
-            display: "flex",
-            flexDirection: "row",
-            marginBottom: "30px",
-            overflow: "hidden",
-            padding: "15px",
-            borderRadius: "6px",
-            border: "1px solid var(--color-border)",
-            // boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
-             boxShadow: "0px 1px 1px var(--gradient-start)",
-            marginRight: "15px",
-          } as React.CSSProperties
-        }
+        className="text card"
+        // style={
+        //   {
+        //     display: "flex",
+        //     flexDirection: "row",
+        //     marginBottom: "30px",
+        //     overflow: "hidden",
+        //     padding: "15px",
+        //     borderRadius: "6px",
+        //     border: "1px solid var(--color-border)",
+        //     // boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
+        //      boxShadow: "0px 1px 1px var(--gradient-start)",
+        //     marginRight: "15px",
+        //   } as React.CSSProperties
+        // }
       >
         <div style={{ overflow: "hidden" } as React.CSSProperties}>
           <div
@@ -58,7 +58,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             style={
               {
                 fontSize: "10px",
-                paddingRight: "15px",
+                // paddingRight: "5px",
                 marginBottom: "5px",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
@@ -78,13 +78,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             } as React.CSSProperties
           }
         >
-          <Image
+          {/* <Image
             className="skillLogo"
             width={30}
             height={30}
             src={project.imagePath}
             alt="skills logo"
-          />
+          /> */}
         </div>
       </div>
     </a>

@@ -7,18 +7,56 @@
   font-style: normal;
 }
 
+/* Custom scrollbar for WebKit-based browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--gradient-end); /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gradient-end-inverse); /* Thumb color */
+  border-radius: 10px; /* Round corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Thumb color on hover */
+}
+
+.custom-scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+}
+
+.custom-scrollable::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-scrollable::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+.custom-scrollable::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+
 :root {
   --color-primary: #007A8D;
-  --color-primary-shadow: #45798C;
-  --color-bg: #F0FEFF;
+  --color-primary-shadow: #313231;
+  --color-bg: #ff9500;
   --color-border: #e5e7eb;
   --color-sidebar-item: #f3f4f6;
   --color-text-p: #252525;
+  --color-text-p-hover: #e5e7eb;
   --color-text-desc: #545454;
   --color-footer: rgb(120, 120, 120);
   --color-bg: #F0FEFF;
-  --gradient-start: #1A262A;
-  --gradient-end: #3B4B51;
+  --gradient-start: #6296c4;
+  --gradient-end: #e95c9f;
   --gradient-start-inverse: #CDEDFE;
   --gradient-end-inverse: #c8d0d5;
 }
@@ -26,16 +64,17 @@
 .dark-mode {
   --color-primary: #60A5B1;
   --color-primary-shadow: #D2E4E7;
-  --color-bg: #27373C;
+  --color-bg: #313231;
   --color-border: #4E4E4E;
   --color-sidebar-item: #3C3C3C;
   --color-text-p: #e5e7eb;
+  --color-text-p-hover: #252525;
   --color-text-desc: #c1c1c1;
   --color-footer: rgb(158, 158, 158);
-  --gradient-start: #CDEDFE;
-  --gradient-end: #c8d0d5;
-  --gradient-start-inverse: #1A262A;
-  --gradient-end-inverse: #3B4B51;
+  --gradient-start: #c84c4c;
+  --gradient-end: #525fbc;
+  --gradient-start-inverse: #252525;
+  --gradient-end-inverse: #252525;
 }
 
 * {
@@ -54,15 +93,15 @@ body {
   position: relative;
   gap: 2rem;
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  /* background-color: var(--color-primary); */
+  /* background-color: var(--color-bg); */
 }
 
 .layout__main-content {
   flex-grow: 1;
   margin: 15px 15px 15px 0px;
   box-shadow: 1px 1px 4px 1px var(--color-primary-shadow);
-  /* background-color: var(--color-bg); */
-  background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse));
+  background-color: var(--color-bg);
+  /* background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse)); */
   border-radius: 5px;
 }
 
@@ -103,7 +142,7 @@ body {
   width: 17rem;
   height: 100%;
   background-color: var(--color-bg);
-  background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse));
+  /* background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse)); */
   padding: 1rem;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
   overflow: hidden;
@@ -124,7 +163,7 @@ body {
   height: 3.5rem;
   object-fit: contain;
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background-color: var(--gradient-start);
 }
 
 .sidebar__logo-name {
@@ -152,11 +191,13 @@ body {
 
 .sidebar__link:hover {
   cursor: pointer;
+  /* background-color: var(--gradient-start); */
+  color: var(--gradient-end);
 }
 
 .sidebar__link--active {
   color: var(--color-bg);
-  background-color: var(--color-primary);
+  background-color: var(--gradient-start);
 }
 
 .sidebar__icon {
@@ -261,16 +302,36 @@ body {
 
 .skillLogo {
   margin-right: 15px;
-  border-radius: 50%;
+  /* border-radius: 5px; */
   /* box-shadow: 1px 1px 2px 1px var(--color-primary); */
   box-shadow: 0px 1px 1px var(--gradient-start);
-  width: 45px;
+  /* width: 45px; */
   height: 45px;
-  padding: 5px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
-  background-color: white;
+  color: var(--color-text-desc);
+  /* background-color: var(--color-primary); */
+}
+
+.skillLogo:hover {
+  background-color: var(--gradient-end-inverse);
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0px 1px 1px var(--gradient-start);
+}
+
+.card:hover {
+  background-color: var(--gradient-end-inverse);
 }
 
 .loadingBar {

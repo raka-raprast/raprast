@@ -5,6 +5,7 @@ import WorkExperienceData from "@/data/workExperience.json";
 import { EducationExperience, WorkExperience } from "@/models/experience_model";
 import EducationCard from "@/components/EducationCard";
 import ReactLoading from "react-loading";
+import { motion } from "framer-motion";
 
 const Experience: React.FC = () => {
   const [isWorkLoading, setIsWorkLoading] = useState(true);
@@ -42,61 +43,66 @@ const Experience: React.FC = () => {
             />
           </div>
         ) : (
-          <div>
-            <h2 className="text"
-              style={
-                {
-                  marginBottom: "20px",
-                  paddingBottom: "5px",
-                  borderBottom: "2px solid rgb(208, 208, 208)",
-                } as React.CSSProperties
-              }
-            >
-              Professional Experience
-            </h2>
-            <div
-              style={
-                {
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                  columnGap: "45px",
-                } as React.CSSProperties
-              }
-            >
-              {workExperienceData.map((experience, index) => (
-                <div key={index}>
-                  <WorkCard workExperience={experience} />
-                </div>
-              ))}
-            </div>
-            <h2
-            className="text"
-              style={
-                {
-                  marginBottom: "20px",
-                  paddingBottom: "5px",
-                  borderBottom: "2px solid rgb(208, 208, 208)",
-                } as React.CSSProperties
-              }
-            >
-              Educational Experience
-            </h2>
-            <div
-              style={
-                {
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(325px, 1fr))",
-                  columnGap: "45px",
-                } as React.CSSProperties
-              }
-            >
-              {educationExperienceData.map((experience, index) => (
-                <div key={index}>
-                  <EducationCard educationExperience={experience} />
-                </div>
-              ))}
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          ><div>
+              <h2 className="text"
+                style={
+                  {
+                    marginBottom: "20px",
+                    paddingBottom: "5px",
+                    borderBottom: "2px solid rgb(208, 208, 208)",
+                  } as React.CSSProperties
+                }
+              >
+                Professional Experience
+              </h2>
+              <div
+                style={
+                  {
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                    columnGap: "45px",
+                  } as React.CSSProperties
+                }
+              >
+                {workExperienceData.map((experience, index) => (
+                  <div key={index}>
+                    <WorkCard workExperience={experience} />
+                  </div>
+                ))}
+              </div>
+              <h2
+                className="text"
+                style={
+                  {
+                    marginBottom: "20px",
+                    paddingBottom: "5px",
+                    borderBottom: "2px solid rgb(208, 208, 208)",
+                  } as React.CSSProperties
+                }
+              >
+                Educational Experience
+              </h2>
+              <div
+                style={
+                  {
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(325px, 1fr))",
+                    columnGap: "45px",
+                  } as React.CSSProperties
+                }
+              >
+                {educationExperienceData.map((experience, index) => (
+                  <div key={index}>
+                    <EducationCard educationExperience={experience} />
+                  </div>
+                ))}
+              </div>
+            </div></motion.div>
+
         )}
       </div>
 

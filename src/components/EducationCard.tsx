@@ -10,19 +10,20 @@ export default function EducationCard({
 }: EducationCardProps) {
   return (
     <div
-      style={
-        {
-          display: "flex",
-          flexDirection: "row",
-          marginBottom: "30px",
-          overflow: "hidden",
-          padding: "15px",
-          borderRadius: "6px",
-          border: "1px solid var(--color-border)",
-          // boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
-          boxShadow: "0px 1px 1px var(--gradient-start)",
-        } as React.CSSProperties
-      }
+    className="card"
+      // style={
+      //   {
+      //     display: "flex",
+      //     flexDirection: "row",
+      //     marginBottom: "30px",
+      //     overflow: "hidden",
+      //     padding: "15px",
+      //     borderRadius: "6px",
+      //     border: "1px solid var(--color-border)",
+      //     // boxShadow: "0.5px 0.5px 0.5px 0.5px #7fc7d9",
+      //     boxShadow: "0px 1px 1px var(--gradient-start)",
+      //   } as React.CSSProperties
+      // }
     >
       <div>
         <div
@@ -67,7 +68,7 @@ export default function EducationCard({
           } as React.CSSProperties
         }
       >
-        <Image
+        {/* <Image
           style={
             {
               borderRadius: "5px",
@@ -79,7 +80,7 @@ export default function EducationCard({
           height={50}
           src={educationExperience.imagePath}
           alt="education logo"
-        />
+        /> */}
       </div>
     </div>
   );

@@ -110,7 +110,7 @@ const Sidebar = () => {
               {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
             </button>
             <aside className="sidebar" data-collapse={true}>
-              <div className="sidebar__top">
+              <div>
                 <Image
                   width={80}
                   height={80}
@@ -123,7 +123,7 @@ const Sidebar = () => {
               <ul className="sidebar__list">
                 {sidebarItems.map(({ name, href, icon: Icon }) => {
                   return (
-                    <li className="sidebar__item" key={name}>
+                    <li key={name}>
                       <Link
                         href={href}
                         passHref
