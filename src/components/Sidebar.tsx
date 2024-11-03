@@ -1,25 +1,19 @@
 import Image from "next/image";
-import { AiOutlineHome } from "react-icons/ai";
 import {
-  BsBook,
   BsBriefcase,
-  BsJournal,
   BsLaptop,
   BsMoon,
   BsPeople,
-  BsPhone,
   BsSun,
-  BsWrench,
 } from "react-icons/bs";
 import { TiContacts } from "react-icons/ti";
-import { FiMail } from "react-icons/fi";
 import {
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
   MdMenu,
 } from "react-icons/md";
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { SidebarContext } from "@/context/SidebarContext";
 import { useRouter } from "next/router";
 
@@ -45,14 +39,18 @@ const sidebarItems = [
     icon: TiContacts,
   },
 ];
+// Define prop types for SidebarContent
+interface SidebarContentProps {
+  mobile: boolean;
+}
+
 
 const Sidebar = () => {
   const router = useRouter();
   const { isCollapsed, toggleSidebarCollapse } = useContext(SidebarContext);
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isDarkLoading, setIsDarkLoading] = useState(true);
+  const isMobileRef = useRef<boolean>(false); // Initialize to false
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // Default to light mode
+
   const toggleDarkMode = () => {
     if (isDarkMode) {
       document.body.classList.remove('dark-mode');
@@ -61,152 +59,132 @@ const Sidebar = () => {
       document.body.classList.add('dark-mode');
       localStorage.setItem('theme', 'dark-mode');
     }
-    setIsDarkMode(!isDarkMode);
+    setIsDarkMode((prev) => !prev);
   };
 
   useEffect(() => {
-    // Check if the dark mode value is already in localStorage
-    setIsDarkLoading(true);
+    // Check for dark mode in localStorage
     const theme = localStorage.getItem('theme');
     if (theme === 'dark-mode') {
       document.body.classList.add('dark-mode');
       setIsDarkMode(true);
     }
-    setIsDarkLoading(false);
 
-    // Check if the isMobile value is already in localStorage
-    const cachedIsMobile = localStorage.getItem('isMobile');
-    if (cachedIsMobile !== null) {
-      setIsMobile(JSON.parse(cachedIsMobile));
-      setIsLoading(false);
-    } else {
-      // If not found in localStorage, determine and set isMobile
-      if (typeof window !== 'undefined') {
-        const userAgent = window.navigator.userAgent;
-        const isMobileDevice = /Mobi|Android/i.test(userAgent);
-        setIsMobile(isMobileDevice);
-        setIsLoading(false);
+    // Determine if the device is mobile once on mount
+    const userAgent = window.navigator.userAgent;
+    isMobileRef.current = /Mobi|Android/i.test(userAgent);
+    localStorage.setItem('isMobile', JSON.stringify(isMobileRef.current));
 
-        // Save to localStorage for future use
-        localStorage.setItem('isMobile', JSON.stringify(isMobileDevice));
+    // Collapse sidebar on route change
+    const handleRouteChange = () => {
+      if (isMobileRef.current) {
+        toggleSidebarCollapse(); // Collapse the sidebar on navigation
       }
-    }
+    };
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  if (isMobile) {
-    return (
-      <div className="sidebar__wrapper_mobile">
-        {!isCollapsed ? null : (
-          <div>
-            <button className="btnMbl" onClick={toggleSidebarCollapse}>
-              {<MdMenu />}
-            </button>
-          </div>
-        )}
-        {!isCollapsed ? (
-          <div>
-            <button className="btn" onClick={toggleSidebarCollapse}>
-              {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
-            </button>
-            <aside className="sidebar" data-collapse={true}>
-              <div>
-                <Image
-                  width={80}
-                  height={80}
-                  className="sidebar__logo"
-                  src="/ai_avatar.png"
-                  alt="logo"
-                />
-                <p className="sidebar__logo-name">Raka Prasetyo</p>
-              </div>
-              <ul className="sidebar__list">
-                {sidebarItems.map(({ name, href, icon: Icon }) => {
-                  return (
-                    <li key={name}>
-                      <Link
-                        href={href}
-                        passHref
-                        className={`sidebar__link ${router.pathname === href
-                          ? "sidebar__link--active"
-                          : ""
-                          }`}
-                      >
-                        <span className="sidebar__icon">
-                          <Icon />
-                        </span>
-                        <span className="sidebar__name">{name}</span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-              <div
-                className="sidebar__link"
-                onClick={toggleDarkMode}>
-                <span className="sidebar__icon">
-                  {isDarkMode ? <BsMoon /> : <BsSun />}
-                </span>
-              </div>
-            </aside>
-          </div>
-        ) : null}
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    // Cleanup event listener on unmount
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router.events]);
+
+  // Memoized sidebar component to prevent unnecessary re-renders
+  const SidebarContent = ({ mobile }: SidebarContentProps) => (
+    <>
+      {mobile && (
+        <button className="mobile-menu-toggle" onClick={toggleSidebarCollapse}>
+          <MdMenu />
+        </button>
+      )}
+
+      {/* Overlay to close the menu when clicking outside */}
+      {!isCollapsed && mobile && (
+        <div className="sidebar__overlay" onClick={toggleSidebarCollapse}></div>
+      )}
+
+      {/* Fullscreen Sidebar */}
+      <div className={`sidebar__mobile_fullscreen ${!isCollapsed ? 'sidebar__mobile_fullscreen--open' : ''}`}>
+        <aside className="sidebar">
+          <ul className="sidebar__list">
+            {sidebarItems.map(({ name, href, icon: Icon }) => (
+              <li className="sidebar__item" key={name}>
+                <Link
+                  href={href}
+                  passHref
+                  className={`sidebar__link ${router.pathname === href ? "sidebar__link--active" : ""}`}
+                >
+                  <span className="sidebar__icon">
+                    <Icon />
+                  </span>
+                  <span className="sidebar__name">{name}</span>
+                </Link>
+              </li>
+            ))}
+            <div className="sidebar__link" onClick={toggleDarkMode}>
+              <span className="sidebar__icon">{isDarkMode ? <BsMoon /> : <BsSun />}</span>
+              <span className="sidebar__name">{isDarkMode ? 'Dark Mode' : 'Light Mode'}</span>
+            </div>
+          </ul>
+        </aside>
       </div>
-    );
-  }
+    </>
+  );
 
   return (
-    <div className="sidebar__wrapper">
-      <button className="btn" onClick={toggleSidebarCollapse}>
-        {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
-      </button>
-      <aside className="sidebar" data-collapse={isCollapsed}>
-        <div className="sidebar__top">
-          <Image
-            width={80}
-            height={80}
-            className="sidebar__logo"
-            src="/ai_avatar.png"
-            alt="logo"
-          />
-          <p className="sidebar__logo-name">Raka Prasetyo</p>
+    <>
+      {isMobileRef.current ? (
+        <SidebarContent mobile />
+      ) : (
+        <div className="sidebar__wrapper">
+          <button className="btn" onClick={toggleSidebarCollapse}>
+            {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
+          </button>
+          <aside className="sidebar" data-collapse={isCollapsed}>
+            <div className="sidebar__top">
+              <Image
+                width={80}
+                height={80}
+                className="sidebar__logo"
+                src="/ai_avatar.png"
+                alt="logo"
+              />
+              <p className="sidebar__logo-name">Raka Prasetyo</p>
+            </div>
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "75%",
+            } as React.CSSProperties}>
+              <ul className="sidebar__list">
+                {sidebarItems.map(({ name, href, icon: Icon }) => (
+                  <li className="sidebar__item" key={name}>
+                    <Link
+                      href={href}
+                      passHref
+                      className={`sidebar__link ${router.pathname === href ? "sidebar__link--active" : ""}`}
+                    >
+                      <span className="sidebar__icon">
+                        <Icon />
+                      </span>
+                      <span className="sidebar__name">{name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="sidebar__link" onClick={toggleDarkMode}>
+              <span className="sidebar__icon">
+                {isDarkMode ? <BsMoon /> : <BsSun />}
+              </span>
+              <span className="sidebar__name">{isDarkMode ? "Dark Mode" : "Light Mode"}</span>
+            </div>
+          </aside>
         </div>
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          height: "80%",
-        } as React.CSSProperties}>
-          <ul className="sidebar__list">
-            {sidebarItems.map(({ name, href, icon: Icon }) => {
-              return (
-                <li className="sidebar__item" key={name}>
-                  <Link
-                    href={href}
-                    passHref
-                    className={`sidebar__link ${router.pathname === href ? "sidebar__link--active" : ""
-                      }`}
-                  >
-                    <span className="sidebar__icon">
-                      <Icon />
-                    </span>
-                    <span className="sidebar__name">{name}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div
-          className="sidebar__link"
-          onClick={toggleDarkMode}>
-          <span className="sidebar__icon">
-            {isDarkLoading ? null : isDarkMode ? <BsMoon /> : <BsSun />}
-          </span>
-          <span className="sidebar__name">{isDarkMode ? "Dark Mode" : "Light Mode"}</span>
-        </div>
-      </aside>
-    </div>
+      )}
+    </>
   );
 };
 
