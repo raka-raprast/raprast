@@ -54,7 +54,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
   if (isLoading) {
     return (
       <div className="loadingBarFullScreen">
-        <ReactLoading type="bars" color="#7fc7d9" height={450} width={375} />
+        <ReactLoading type="bars" color="#252525" height={450} width={375} />
       </div>
     );
   }
@@ -62,9 +62,14 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
   return (
     <div className="layout">
       <Head>
-        <title>Raprast</title>
+        <title>Raprast - Full Stack Engineer</title>
+        <meta property="og:title" content="Raprast - Full Stack Engineer" />
         <link rel="icon" href="/logo.ico" />
         <link rel="icon" type="image/png" href="/ai_avatar.png" />
+        <meta name="description" content="Experienced Full Stack Engineering"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/logo.ico" />
+        <meta property="og:description" content="Experienced Full Stack Engineering for Your Needs" />
       </Head>
       <Sidebar />
       {isMobile ? (

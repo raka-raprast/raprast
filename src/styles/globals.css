@@ -17,7 +17,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--gradient-end-inverse); /* Thumb color */
+  background-color: var(--color-bg); /* Thumb color */
   border-radius: 10px; /* Round corners */
 }
 
@@ -119,8 +119,8 @@ body {
 
 .layout__main-content_mobile {
   flex-grow: 1;
-  /* background-color: var(--color-bg); */
-  background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse));
+  background-color: var(--color-bg);
+  /* background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse)); */
 }
 
 .sidebar__wrapper {
@@ -242,8 +242,8 @@ body {
   cursor: pointer;
   transform: translateX(50%);
   font-size: 1.1rem;
-  box-shadow: 1px 1px 2px 1px var(--color-primary);
-  color: var(--color-primary);
+  box-shadow: 1px 1px 2px 1px var(--gradient-start);
+  color: var(--gradient-start);
 }
 
 .btn {
@@ -262,7 +262,7 @@ body {
   cursor: pointer;
   transform: translateX(50%);
   font-size: 1.1rem;
-  color: var(--color-primary);
+  color: var(--gradient-start);
 }
 
 .avatar {
@@ -277,8 +277,9 @@ body {
 }
 
 .avatarSmallScreen {
-  background-color: var(--color-primary);
-  border-radius: 12px;
+  /* background-color: var(--color-primary); */
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 12px;  
   object-fit: cover;
   object-position: center;
   display: block;
@@ -367,12 +368,13 @@ body {
 
   .btn {
     position: absolute;
-    right: 0.75rem;
+    right: 0;
     top: 4.7rem;
     border: none;
     background-color: var(--color-bg);
     width: 1.5rem;
     height: 1.5rem;
+    border: 1px solid var(--color-border);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -380,6 +382,6 @@ body {
     cursor: pointer;
     transform: translateX(50%);
     font-size: 1.1rem;
-    color: var(--color-primary);
+    color: var(--gradient-start);
   }
 }

@@ -37,7 +37,7 @@ const Experience: React.FC = () => {
           <div className="loadingBar">
             <ReactLoading
               type="bars"
-              color="#7fc7d9"
+              color="#252525"
               height={450}
               width={375}
             />

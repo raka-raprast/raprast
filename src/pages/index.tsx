@@ -76,7 +76,7 @@ const Home: React.FC = () => {
           <div className="loadingBar">
             <ReactLoading
               type="bars"
-              color="#7fc7d9"
+              color="#252525"
               height={450}
               width={375}
             />
@@ -205,6 +205,7 @@ const Home: React.FC = () => {
                       {
                         textAlign: windowSize.width <= 1000 ? "center" : "start",
                         marginBottom: "15px",
+                        marginTop:  windowSize.width <= 1000 ? "20px" : null
                       } as React.CSSProperties
                     }
                   >
@@ -386,14 +387,16 @@ const skills = [
       { title: "ReactJS", src: "/reactjs.png", alt: "react" },
       { title: "NextJS", src: "/nextjs.png", alt: "nextjs" },
       { title: "Flutter", src: "/flutter.png", alt: "flutter" },
+      { title: "React Native", src: "/react-native.png", alt: "react-native" },
       { title: "WordPress", src: "/wordpress.png", alt: "wordpress" }
     ]
   },
   {
     category: "Back-End",
     items: [
-      { title: "FastAPI", src: "/fastapi.png", alt: "fastapi" },
       { title: "NestJS", src: "/nestjs.png", alt: "nestjs" },
+      { title: "FastAPI", src: "/fastapi.png", alt: "fastapi" },
+      { title: "Django", src: "/django.png", alt: "django" },
       { title: "Gin-Gonic", src: "/gin-gonic.jpg", alt: "gin-gonic" }
     ]
   },
@@ -410,7 +413,14 @@ const skills = [
     items: [
       { title: "PostgreSQL", src: "/postgresql.png", alt: "postgresql" },
       { title: "MongoDB", src: "/mongodb.png", alt: "mongodb" },
+      { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
       { title: "Firebase", src: "/firebase.png", alt: "firebase" }
+    ]
+  },
+  {
+    category: "DevOps",
+    items: [
+      { title: "Docker", src: "/docker.png", alt: "docker" },
     ]
   }
 ];

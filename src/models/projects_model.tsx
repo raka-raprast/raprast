@@ -3,5 +3,6 @@ export type ProjectModel = {
   date: string;
   imagePath: string;
   description: string;
+  type: string;
   link: string;
 };

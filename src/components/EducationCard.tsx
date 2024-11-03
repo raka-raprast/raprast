@@ -1,5 +1,6 @@
 import { EducationExperience } from "@/models/experience_model";
 import Image from "next/image";
+import { AiOutlinePhone } from "react-icons/ai";
 
 type EducationCardProps = {
   educationExperience: EducationExperience;
