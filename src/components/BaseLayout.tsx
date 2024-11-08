@@ -31,22 +31,35 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
     }
 
     // Check if the isMobile value is already in localStorage
-    const cachedIsMobile = localStorage.getItem('isMobile');
-    if (cachedIsMobile !== null) {
-      setIsMobile(JSON.parse(cachedIsMobile));
-      setIsLoading(false);
-    } else {
-      // If not found in localStorage, determine and set isMobile
-      if (typeof window !== 'undefined') {
-        const userAgent = window.navigator.userAgent;
-        const isMobileDevice = /Mobi|Android/i.test(userAgent);
-        setIsMobile(isMobileDevice);
-        setIsLoading(false);
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
 
-        // Save to localStorage for future use
-        localStorage.setItem('isMobile', JSON.stringify(isMobileDevice));
-      }
-    }
+    // Initial check
+    checkIsMobile();
+    setIsLoading(false);
+
+    // Add event listener for screen resizing
+    window.addEventListener('resize', checkIsMobile);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', checkIsMobile);
+    // const cachedIsMobile = localStorage.getItem('isMobile');
+    // if (cachedIsMobile !== null) {
+    //   setIsMobile(JSON.parse(cachedIsMobile));
+    //   setIsLoading(false);
+    // } else {
+    //   // If not found in localStorage, determine and set isMobile
+    //   if (typeof window !== 'undefined') {
+    //     const userAgent = window.navigator.userAgent;
+    //     const isMobileDevice = /Mobi|Android/i.test(userAgent);
+    //     setIsMobile(isMobileDevice);
+    //     setIsLoading(false);
+
+    //     // Save to localStorage for future use
+    //     localStorage.setItem('isMobile', JSON.stringify(isMobileDevice));
+    //   }
+    // }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

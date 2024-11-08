@@ -166,6 +166,39 @@ body {
   transform: translateX(0);
 }
 
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--color-bg);
+  padding: 0.5rem 0;
+  border-top: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.bottom-nav__list {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.bottom-nav__item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-nav__icon {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.bottom-nav__link--active .bottom-nav__icon {
+  color: var(--highlight-color);
+}
 
 /* .sidebar__top {
   display: flex;
