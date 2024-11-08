@@ -126,7 +126,7 @@ const Contact: React.FC = () => {
               </div>
             </a>
             <a
-              href="mailto:raprast.raka@gmail.com"
+              href="mailto:raka@raprast.tech"
               rel="noopener noreferrer"
               style={{
                 textDecoration: "none",
