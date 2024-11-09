@@ -13,26 +13,26 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // Default to light mode
   const toggleDarkMode = () => {
     if (isDarkMode) {
-      document.body.classList.remove('dark-mode');
-      localStorage.removeItem('theme');
+      document.body.classList.remove("dark-mode");
+      localStorage.removeItem("theme");
     } else {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark-mode');
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark-mode");
     }
     setIsDarkMode(!isDarkMode);
   };
 
   useEffect(() => {
     // Check if the dark mode value is already in localStorage
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark-mode') {
-      document.body.classList.add('dark-mode');
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark-mode") {
+      document.body.classList.add("dark-mode");
       setIsDarkMode(true);
     }
 
     // Check if the isMobile value is already in localStorage
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+      setIsMobile(window.innerWidth <= 1000); // Adjust breakpoint as needed
     };
 
     // Initial check
@@ -40,10 +40,10 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
     setIsLoading(false);
 
     // Add event listener for screen resizing
-    window.addEventListener('resize', checkIsMobile);
+    window.addEventListener("resize", checkIsMobile);
 
     // Cleanup event listener on component unmount
-    return () => window.removeEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
     // const cachedIsMobile = localStorage.getItem('isMobile');
     // if (cachedIsMobile !== null) {
     //   setIsMobile(JSON.parse(cachedIsMobile));
@@ -67,31 +67,42 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
   if (isLoading) {
     return (
       <div className="loadingBarFullScreen">
-        <ReactLoading type="bars" color="#252525" height={450} width={375} />
+        <ReactLoading
+          type="bars"
+          color={"var(--gradient-start)"}
+          height={450}
+          width={isMobile ? 200 : 375}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="layout">
+        <Head>
+          <title>Raprast - Full Stack Engineer</title>
+          <meta property="og:title" content="Raprast - Full Stack Engineer" />
+          <link rel="icon" href="/logo.ico" />
+          <link rel="icon" type="image/png" href="/ai_avatar.png" />
+          <meta
+            name="description"
+            content="Experienced Full Stack Engineering"
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="/logo.ico" />
+          <meta
+            property="og:description"
+            content="Experienced Full Stack Engineering for Your Needs"
+          />
+        </Head>
+        <Sidebar />
+        {isMobile ? (
+          <main className="layout__main-content_mobile">{children}</main>
+        ) : (
+          <main className="layout__main-content">{children}</main>
+        )}
       </div>
     );
   }
-
-  return (
-    <div className="layout">
-      <Head>
-        <title>Raprast - Full Stack Engineer</title>
-        <meta property="og:title" content="Raprast - Full Stack Engineer" />
-        <link rel="icon" href="/logo.ico" />
-        <link rel="icon" type="image/png" href="/ai_avatar.png" />
-        <meta name="description" content="Experienced Full Stack Engineering"/>
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/logo.ico" />
-        <meta property="og:description" content="Experienced Full Stack Engineering for Your Needs" />
-      </Head>
-      <Sidebar />
-      {isMobile ? (
-        <main className="layout__main-content_mobile">{children}</main>
-      ) : (
-        <main className="layout__main-content">{children}</main>
-      )}
-    </div>
-  );
 };
 
 export default BaseLayout;

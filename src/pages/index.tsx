@@ -10,14 +10,13 @@ import {
 } from "react-compare-slider";
 import ReactLoading from "react-loading";
 import { Tooltip } from "@mui/material";
-import { Code, Palette, Terminal, Globe, Database, Server } from "lucide-react"
+import { Code, Palette, Terminal, Globe, Database, Server } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Skill {
-  name: string
-  category: "Frontend" | "Backend" | "Database" | "DevOps" | "Design" | "Other"
+  name: string;
+  category: "Frontend" | "Backend" | "Database" | "DevOps" | "Design" | "Other";
 }
-
 
 const Home: React.FC = () => {
   const isClient = typeof window !== "undefined"; // Check if running on the client side
@@ -31,20 +30,19 @@ const Home: React.FC = () => {
   const getCategoryIcon = (category: Skill["category"]) => {
     switch (category) {
       case "Frontend":
-        return <Globe className="h-6 w-6" />
+        return <Globe className="h-6 w-6" />;
       case "Backend":
-        return <Server className="h-6 w-6" />
+        return <Server className="h-6 w-6" />;
       case "Database":
-        return <Database className="h-6 w-6" />
+        return <Database className="h-6 w-6" />;
       case "DevOps":
-        return <Terminal className="h-6 w-6" />
+        return <Terminal className="h-6 w-6" />;
       case "Design":
-        return <Palette className="h-6 w-6" />
+        return <Palette className="h-6 w-6" />;
       default:
-        return <Code className="h-6 w-6" />
+        return <Code className="h-6 w-6" />;
     }
-  }
-
+  };
 
   useEffect(() => {
     if (isClient) {
@@ -73,20 +71,21 @@ const Home: React.FC = () => {
     <BaseLayout>
       <div className="home">
         {isLoading ? (
-          <div className="loadingBar">
+          <div className="loadingBarWithSideBar">
             <ReactLoading
               type="bars"
-              color="#252525"
+              color={"var(--gradient-start)"}
               height={450}
-              width={375}
+              width={windowSize.width <= 1000 ? 200 : 375}
             />
           </div>
         ) : (
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: windowSize.width <= 1000 ? 10 : 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-          ><div>
+          >
+            <div>
               {windowSize.width <= 1000 ? (
                 <div
                   style={
@@ -107,7 +106,8 @@ const Home: React.FC = () => {
                       itemOne={
                         <ReactCompareSliderImage
                           style={{
-                            boxShadow: "0px 1px 1px var(--gradient-start-inverse)",
+                            boxShadow:
+                              "0px 1px 1px var(--gradient-start-inverse)",
                           }}
                           src="/ai_avatar.png"
                           alt="Image one"
@@ -118,7 +118,8 @@ const Home: React.FC = () => {
                       itemTwo={
                         <ReactCompareSliderImage
                           style={{
-                            boxShadow: "0px 1px 1px var(--gradient-start-inverse)",
+                            boxShadow:
+                              "0px 1px 1px var(--gradient-start-inverse)",
                           }}
                           src="/real_avatar.png"
                           alt="Image two"
@@ -203,9 +204,10 @@ const Home: React.FC = () => {
                     className="name"
                     style={
                       {
-                        textAlign: windowSize.width <= 1000 ? "center" : "start",
+                        textAlign:
+                          windowSize.width <= 1000 ? "center" : "start",
                         marginBottom: "15px",
-                        marginTop:  windowSize.width <= 1000 ? "20px" : null
+                        marginTop: windowSize.width <= 1000 ? "20px" : null,
                       } as React.CSSProperties
                     }
                   >
@@ -216,11 +218,22 @@ const Home: React.FC = () => {
                     style={
                       {
                         fontSize: "medium",
-                        textAlign: windowSize.width <= 1000 ? "justify" : "start",
+                        textAlign:
+                          windowSize.width <= 1000 ? "justify" : "start",
                       } as React.CSSProperties
                     }
                   >
-                    Hey there, tech aficionados and digital wanderers! I&apos;m Raka from Balikpapan, East Kalimantan, Indonesia. With an Electrical Engineering degree from Universitas Balikpapan, I’m passionate about AI, Mobile Development, and Web Development. I groove with Flutter and React Native for mobile, and dance through the web with ReactJS and NextJS, with HTML and CSS as my trusty sidekicks. Beyond coding, I dive into 3D printing, crafting electrical tools as a hobby. This website is my journey through circuits, code, and creativity. Buckle up and explore the funky side of tech with me!
+                    Hey there, tech aficionados and digital wanderers! I&apos;m
+                    Raka from Balikpapan, East Kalimantan, Indonesia. With an
+                    Electrical Engineering degree from Universitas Balikpapan,
+                    I’m passionate about AI, Mobile Development, and Web
+                    Development. I groove with Flutter and React Native for
+                    mobile, and dance through the web with ReactJS and NextJS,
+                    with HTML and CSS as my trusty sidekicks. Beyond coding, I
+                    dive into 3D printing, crafting electrical tools as a hobby.
+                    This website is my journey through circuits, code, and
+                    creativity. Buckle up and explore the funky side of tech
+                    with me!
                   </p>
                   {skills.map((skillCategory) => (
                     <div key={skillCategory.category}>
@@ -230,33 +243,23 @@ const Home: React.FC = () => {
                           marginTop: "10px",
                           marginBottom: "10px",
                           fontWeight: "bolder",
-                          textAlign: windowSize.width <= 1000 ? "center" : "start"
+                          textAlign:
+                            windowSize.width <= 1000 ? "center" : "start",
                         }}
                       >
                         {skillCategory.category}
                       </p>
                       <div
+                        className="skillLogoContainer"
                         style={{
-                          display: "flex",
-                          alignContent: "center",
-                          justifyContent: windowSize.width <= 1000 ? "center" : "start",
-                          alignItems: "center",
-                          flexDirection: "row"
+                          justifyContent:
+                            windowSize.width <= 1000 ? "center" : "start",
                         }}
                       >
                         {skillCategory.items.map((item) => (
                           <Tooltip key={item.title} title={item.title}>
                             <div className="skillLogo">
-                              <p>
-                                {item.title}
-                              </p>
-                              {/* <Image
-                              width={30}
-                              height={30}
-                              style={{ objectFit: item.alt === "fastapi" || item.alt === "postgresql" || item.alt === "mongodb" ? "fill" : "cover" }}
-                              src={item.src}
-                              alt={item.alt}
-                            /> */}
+                              <p>{item.title}</p>
                             </div>
                           </Tooltip>
                         ))}
@@ -370,8 +373,8 @@ const Home: React.FC = () => {
                   </div>
                 )}
               </div>
-            </div></motion.div>
-
+            </div>
+          </motion.div>
         )}
       </div>
 
@@ -388,8 +391,8 @@ const skills = [
       { title: "NextJS", src: "/nextjs.png", alt: "nextjs" },
       { title: "Flutter", src: "/flutter.png", alt: "flutter" },
       { title: "React Native", src: "/react-native.png", alt: "react-native" },
-      { title: "WordPress", src: "/wordpress.png", alt: "wordpress" }
-    ]
+      { title: "WordPress", src: "/wordpress.png", alt: "wordpress" },
+    ],
   },
   {
     category: "Back-End",
@@ -397,16 +400,16 @@ const skills = [
       { title: "NestJS", src: "/nestjs.png", alt: "nestjs" },
       { title: "FastAPI", src: "/fastapi.png", alt: "fastapi" },
       { title: "Django", src: "/django.png", alt: "django" },
-      { title: "Gin-Gonic", src: "/gin-gonic.jpg", alt: "gin-gonic" }
-    ]
+      { title: "Gin-Gonic", src: "/gin-gonic.jpg", alt: "gin-gonic" },
+    ],
   },
   {
     category: "Artificial Intelligence",
     items: [
       { title: "TensorFlow", src: "/tensorflow.png", alt: "tensorflow" },
       { title: "Keras", src: "/keras.png", alt: "keras" },
-      { title: "PyTorch", src: "/pytorch.png", alt: "pytorch" }
-    ]
+      { title: "PyTorch", src: "/pytorch.png", alt: "pytorch" },
+    ],
   },
   {
     category: "Database",
@@ -414,16 +417,13 @@ const skills = [
       { title: "PostgreSQL", src: "/postgresql.png", alt: "postgresql" },
       { title: "MongoDB", src: "/mongodb.png", alt: "mongodb" },
       { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
-      { title: "Firebase", src: "/firebase.png", alt: "firebase" }
-    ]
+      { title: "Firebase", src: "/firebase.png", alt: "firebase" },
+    ],
   },
   {
     category: "DevOps",
-    items: [
-      { title: "Docker", src: "/docker.png", alt: "docker" },
-    ]
-  }
+    items: [{ title: "Docker", src: "/docker.png", alt: "docker" }],
+  },
 ];
-
 
 export default Home;

@@ -175,7 +175,7 @@ body {
   justify-content: space-around;
   background-color: var(--color-bg);
   padding: 0.5rem 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--gradient-start);
   z-index: 1000;
 }
 
@@ -277,13 +277,37 @@ body {
   border-radius: 0.8rem;
 }
 
+.navbar__link {
+  display: inline-block;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--color-text-p);
+  padding: 0.8rem 1rem;
+  display: flex;
+  /* box-shadow: 0px 1px 1px var(--gradient-start); */
+  /* background-color: var(--color-sidebar-item); */
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+}
+
 .sidebar__link:hover {
   cursor: pointer;
   /* background-color: var(--gradient-start); */
   color: var(--gradient-end);
 }
 
+.navbar__link:hover {
+  cursor: pointer;
+  /* background-color: var(--gradient-start); */
+  color: var(--gradient-end);
+}
+
 .sidebar__link--active {
+  color: var(--color-bg);
+  background-color: var(--gradient-start);
+}
+
+.navbar__link--active {
   color: var(--color-bg);
   background-color: var(--gradient-start);
 }
@@ -389,19 +413,24 @@ body {
   color: var(--color-text-desc);
 }
 
+.skillLogoContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap; /* Enables wrapping */
+}
+
 .skillLogo {
   margin-right: 15px;
-  /* border-radius: 5px; */
-  /* box-shadow: 1px 1px 2px 1px var(--color-primary); */
   box-shadow: 0px 1px 1px var(--gradient-start);
-  /* width: 45px; */
   height: 45px;
   padding: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
   color: var(--color-text-desc);
-  /* background-color: var(--color-primary); */
 }
 
 .skillLogo:hover {
@@ -436,6 +465,13 @@ body {
   height: 100vh;
 }
 
+.loadingBarWithSideBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gradient-start)
+}
+
 .socmed_button {
   /* width: 130px; */
   padding: 5px 10px 5px 10px;
@@ -446,12 +482,12 @@ body {
   box-shadow: 0px 1px 1px var(--gradient-start);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .home {
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 50px);
-    padding: 40px;
+    padding: 30px;
   }
 
   .btn {
@@ -482,6 +518,13 @@ body {
     padding-top: 3rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
     overflow: hidden;
+  }
+
+  .skillLogo {
+    height: 30px; /* Smaller height */
+    padding: 5px; /* Smaller padding */
+    font-size: 0.8rem; /* Adjust font size */
+    margin-bottom: 5px;
   }
   
 }

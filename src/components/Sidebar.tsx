@@ -48,7 +48,7 @@ interface SidebarContentProps {
 const Sidebar = () => {
   const router = useRouter();
   const { isCollapsed, toggleSidebarCollapse } = useContext(SidebarContext);
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768); // Initial check without flash
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 1000); // Initial check without flash
   const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('theme') === 'dark-mode');
 
   const toggleDarkMode = () => {
@@ -77,7 +77,7 @@ const Sidebar = () => {
             <Link
               href={href}
               passHref
-              className={`sidebar__link ${router.pathname === href ? "sidebar__link--active" : ""}`}
+              className={`navbar__link ${router.pathname === href ? "navbar__link--active" : ""}`}
             >
               <span className="sidebar__icon">
                 <Icon />
@@ -86,7 +86,7 @@ const Sidebar = () => {
           </li>
         ))}
         <li className="bottom-nav__item" onClick={toggleDarkMode}>
-          <div className="sidebar__link">
+          <div className="navbar__link">
             <span className="sidebar__icon">
             {isDarkMode ? <BsMoon /> : <BsSun />}
           </span></div>
