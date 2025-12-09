@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "name": "RiftBit",
+            "date": "Dec 2025",
+            "imagePath": "https://res.cloudinary.com/dtb7tvlgu/image/upload/v1765256327/riftbit_cxle9a.webp",
+            "description": "A simple, non-custodial wallet concept designed for Southeast Asian stablecoins 🌏💸.Built around full key control 🔐, smooth send/receive flows 💨, and easy on-ramping through trusted partners 🤝.The goal is a lightweight, friendly experience that makes digital value across the region feel effortless and intuitive ✨.",
+            "type": "Mobile App",
+            "link": "https://dribbble.com/shots/26853315-RiftBit-Southeast-Asia-Stablecoin-Wallet-Concept"
+        },
+        {
+            "name": "Chatmunication",
+            "date": "Jul 2025",
+            "imagePath": "https://res.cloudinary.com/dtb7tvlgu/image/upload/v1763298224/troyanix/chatmunication_tilqr0.jpg",
+            "description": "A clean and modern communication platform designed for seamless voice calls, video calls, and instant messaging—all in one place. Crafted with a light, friendly interface to enhance clarity and usability, this UI concept focuses on intuitive navigation and delightful user interactions. Core features: 🎙️ One-tap voice calling 📹 High-quality video chat 💬 Fast and reliable messaging ✨ Simple, minimal, and user-first design",
+            "type": "Mobile App",
+            "link": "https://dribbble.com/shots/26203374-Chatmunication-Messaging-and-Calling-Mobile-App"
+        },
+        {
+            "name": "KilanAccurate",
+            "date": "Mar 2025",
+            "imagePath": "https://res.cloudinary.com/dtb7tvlgu/image/upload/v1763297164/troyanix/kilan-accurate_bi1juv.jpg",
+            "description": "A modern and effortless attendance system built for onsite companies, combining a mobile app, admin dashboard, and secure backend into one smooth experience. Designed with clarity and speed in mind, it ensures accurate check-ins and easy staff management for everyday operations. Core features: 📍 Onsite-verified mobile attendance 📊 Real-time admin monitoring 🗂️ Schedule and employee management 🔒 Secure backend and data handling ✨ Simple, reliable, and company-ready design",
+            "type": "Mobile App",
+            "link": "https://kilan-admin.netlify.app/"
+        }
+    ]
+}

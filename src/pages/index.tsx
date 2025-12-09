@@ -110,9 +110,9 @@ const Home: React.FC = () => {
                               "0px 1px 1px var(--gradient-start-inverse)",
                           }}
                           src="/ai_avatar.png"
-                          alt="Image one"
+                          alt="ai_avatar"
                           width={140}
-                          height={140}
+                          height={180}
                         />
                       }
                       itemTwo={
@@ -122,7 +122,7 @@ const Home: React.FC = () => {
                               "0px 1px 1px var(--gradient-start-inverse)",
                           }}
                           src="/real_avatar.png"
-                          alt="Image two"
+                          alt="real_avatar"
                           width={140}
                           height={140}
                         />
@@ -391,7 +391,7 @@ const skills = [
       { title: "NextJS", src: "/nextjs.png", alt: "nextjs" },
       { title: "Flutter", src: "/flutter.png", alt: "flutter" },
       { title: "React Native", src: "/react-native.png", alt: "react-native" },
-      { title: "WordPress", src: "/wordpress.png", alt: "wordpress" },
+      // { title: "WordPress", src: "/wordpress.png", alt: "wordpress" },
     ],
   },
   {
@@ -416,14 +416,14 @@ const skills = [
     items: [
       { title: "PostgreSQL", src: "/postgresql.png", alt: "postgresql" },
       { title: "MongoDB", src: "/mongodb.png", alt: "mongodb" },
-      { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
-      { title: "Firebase", src: "/firebase.png", alt: "firebase" },
+      // { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
+      // { title: "Firebase", src: "/firebase.png", alt: "firebase" },
     ],
   },
-  {
-    category: "DevOps",
-    items: [{ title: "Docker", src: "/docker.png", alt: "docker" }],
-  },
+  // {
+  //   category: "DevOps",
+  //   items: [{ title: "Docker", src: "/docker.png", alt: "docker" }],
+  // },
 ];
 
 export default Home;

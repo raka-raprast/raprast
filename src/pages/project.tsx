@@ -4,6 +4,7 @@ import { ProjectModel } from "@/models/projects_model";
 import ProjectCard from "@/components/ProjectCard";
 import ReactLoading from "react-loading";
 import { motion } from "framer-motion";
+import NewProjectCard from "@/components/NewProjectCard";
 
 const Project: React.FC = () => {
   const isClient = typeof window !== "undefined";
@@ -16,7 +17,8 @@ const Project: React.FC = () => {
   const [projectData, setProjectData] = useState<ProjectModel[]>([]);
 
   useEffect(() => {
-    import("@/data/projects.json").then((data) => {
+    // import("@/data/projects.json").then((data) => {
+    import("@/data/newProject.json").then((data) => {
       setProjectData(data.projects);
       setIsProjectLoading(false);
     });
@@ -104,7 +106,7 @@ const Project: React.FC = () => {
                 >
                   {projectData.map((project, index) => (
                     <div key={index}>
-                      <ProjectCard project={project} />
+                      <NewProjectCard project={project} />
                     </div>
                   ))}
                 </div>

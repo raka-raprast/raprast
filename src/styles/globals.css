@@ -252,6 +252,7 @@ body {
   object-fit: contain;
   border-radius: 50%;
   background-color: var(--gradient-start);
+  transform: scaleX(-1);
 }
 
 .sidebar__logo-name {
@@ -396,7 +397,7 @@ body {
   object-position: center;
   display: block;
   width: 200px;
-  height: 200px;
+  height: 250px;
 }
 
 .name {
