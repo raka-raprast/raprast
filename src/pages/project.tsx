@@ -17,8 +17,8 @@ const Project: React.FC = () => {
   const [projectData, setProjectData] = useState<ProjectModel[]>([]);
 
   useEffect(() => {
-    // import("@/data/projects.json").then((data) => {
-    import("@/data/newProject.json").then((data) => {
+    import("@/data/projects.json").then((data) => {
+    // import("@/data/newProject.json").then((data) => {
       setProjectData(data.projects);
       setIsProjectLoading(false);
     });
@@ -106,16 +106,18 @@ const Project: React.FC = () => {
                 >
                   {projectData.map((project, index) => (
                     <div key={index}>
-                      <NewProjectCard project={project} />
+                      <ProjectCard project={project} />
+                      {/* <NewProjectCard project={project} /> */}
                     </div>
                   ))}
                 </div>
               </div>
             </motion.div>
-            <div className="footer">© 2024 Raka Ramadhani Aulia Prasetyo</div>
           </div>
         )}
       </div>
+
+      <div className="footer">© 2026 Raka Ramadhani Aulia Prasetyo</div>
     </BaseLayout>
   );
 };

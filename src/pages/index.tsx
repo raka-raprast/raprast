@@ -378,7 +378,7 @@ const Home: React.FC = () => {
         )}
       </div>
 
-      <div className="footer">© 2024 Raka Ramadhani Aulia Prasetyo</div>
+      <div className="footer">© 2026 Raka Ramadhani Aulia Prasetyo</div>
     </BaseLayout>
   );
 };
@@ -416,6 +416,14 @@ const skills = [
     items: [
       { title: "PostgreSQL", src: "/postgresql.png", alt: "postgresql" },
       { title: "MongoDB", src: "/mongodb.png", alt: "mongodb" },
+      // { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
+      // { title: "Firebase", src: "/firebase.png", alt: "firebase" },
+    ],
+  },
+  {
+    category: "Web3",
+    items: [
+      { title: "Solidity", src: "/solidity.png", alt: "solidity" },
       // { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
       // { title: "Firebase", src: "/firebase.png", alt: "firebase" },
     ],

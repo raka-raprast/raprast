@@ -139,10 +139,11 @@ const Experience: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-            <div className="footer">© 2024 Raka Ramadhani Aulia Prasetyo</div>
           </div>
         )}
       </div>
+
+      <div className="footer">© 2026 Raka Ramadhani Aulia Prasetyo</div>
     </BaseLayout>
   );
 };

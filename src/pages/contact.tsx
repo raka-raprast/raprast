@@ -234,7 +234,7 @@ const Contact: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="footer">© 2024 Raka Ramadhani Aulia Prasetyo</div>
+          <div className="footer">© 2026 Raka Ramadhani Aulia Prasetyo</div>
         </div>
       )}
     </BaseLayout>
