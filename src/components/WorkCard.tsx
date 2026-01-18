@@ -1,72 +1,136 @@
 import { WorkExperience } from "@/models/experience_model";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import { Calendar, Building2, Briefcase } from "lucide-react";
 
 type WorkCardProps = {
   workExperience: WorkExperience;
+  index?: number;
 };
 
-export default function WorkCard({ workExperience }: WorkCardProps) {
+export default function WorkCard({ workExperience, index = 0 }: WorkCardProps) {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        delay: index * 0.1,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  };
+
   return (
-    <div
+    <motion.div
+      variants={cardVariants}
+      initial="hidden"
+      animate="visible"
       className="card"
+      style={
+        {
+          display: "flex",
+          flexDirection: "column",
+          gap: "12px",
+          position: "relative",
+          overflow: "hidden",
+          padding: "24px",
+          borderRadius: "16px",
+          border: "1px solid var(--color-border)",
+          backgroundColor: "var(--color-bg)",
+          boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          cursor: "default",
+        } as React.CSSProperties
+      }
+      whileHover={{
+        transform: "translateY(-4px)",
+        boxShadow: "0 12px 24px -8px rgba(98, 150, 196, 0.3), 0 6px 12px -6px rgba(98, 150, 196, 0.2)",
+        borderColor: "var(--gradient-start)"
+      }}
     >
-      <div>
-        <div
-          className="text"
-          style={
-            {
-              fontSize: "medium",
-              paddingRight: "15px",
-              marginBottom: "5px",
-            } as React.CSSProperties
-          }
-        >
-          {workExperience.company_name}
-        </div>
-        <div
-          className="text"
-          style={
-            {
-              fontSize: "12px",
-            } as React.CSSProperties
-          }
-        >
-          {workExperience.job_title}
-        </div>
-        <div
-          className="text"
-          style={
-            {
-              fontSize: "12px",
-            } as React.CSSProperties
-          }
-        >
-          {workExperience.start_date} - {workExperience.end_date}
-        </div>
-      </div>
       <div
         style={
           {
-            flex: 1,
-            display: "flex",
-            justifyContent: "flex-end",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "4px",
+            height: "100%",
+            background: "linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))",
+            opacity: 0.8,
           } as React.CSSProperties
         }
-      >
-        {/* <Image
-          style={
-            {
-              backgroundColor: "white",
-              boxShadow: "0px 1px 1px var(--gradient-start)",
-              borderRadius: "5px",
-            } as React.CSSProperties
-          }
-          width={50}
-          height={50}
-          src={workExperience.imagePath}
-          alt="work logo"
-        /> */}
+      />
+
+      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <Building2
+          style={{
+            width: "20px",
+            height: "20px",
+            color: "var(--gradient-start)",
+            flexShrink: 0,
+          }}
+        />
+        <h3
+          className="text"
+          style={{
+            fontSize: "18px",
+            fontWeight: 600,
+            color: "var(--color-text-p)",
+            margin: 0,
+            lineHeight: 1.3,
+          }}
+        >
+          {workExperience.company_name}
+        </h3>
       </div>
-    </div>
+
+      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <Briefcase
+          style={{
+            width: "18px",
+            height: "18px",
+            color: "var(--gradient-end)",
+            flexShrink: 0,
+          }}
+        />
+        <p
+          className="text"
+          style={{
+            fontSize: "15px",
+            color: "var(--color-text-p)",
+            margin: 0,
+            fontWeight: 500,
+            lineHeight: 1.4,
+          }}
+        >
+          {workExperience.job_title}
+        </p>
+      </div>
+
+      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <Calendar
+          style={{
+            width: "16px",
+            height: "16px",
+            color: "var(--gradient-start)",
+            flexShrink: 0,
+            opacity: 0.7,
+          }}
+        />
+        <span
+          className="text"
+          style={{
+            fontSize: "14px",
+            color: "var(--color-text-desc)",
+            fontWeight: 400,
+            display: "inline-block",
+          }}
+        >
+          {workExperience.start_date} - {workExperience.end_date}
+        </span>
+      </div>
+    </motion.div>
   );
 }

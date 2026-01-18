@@ -9,14 +9,7 @@ import {
   ReactCompareSliderImage,
 } from "react-compare-slider";
 import ReactLoading from "react-loading";
-import { Tooltip } from "@mui/material";
-import { Code, Palette, Terminal, Globe, Database, Server } from "lucide-react";
 import { motion } from "framer-motion";
-
-interface Skill {
-  name: string;
-  category: "Frontend" | "Backend" | "Database" | "DevOps" | "Design" | "Other";
-}
 
 const Home: React.FC = () => {
   const isClient = typeof window !== "undefined"; // Check if running on the client side
@@ -27,22 +20,16 @@ const Home: React.FC = () => {
   });
 
   const [isLoading, setIsLoading] = useState(true);
-  const getCategoryIcon = (category: Skill["category"]) => {
-    switch (category) {
-      case "Frontend":
-        return <Globe className="h-6 w-6" />;
-      case "Backend":
-        return <Server className="h-6 w-6" />;
-      case "Database":
-        return <Database className="h-6 w-6" />;
-      case "DevOps":
-        return <Terminal className="h-6 w-6" />;
-      case "Design":
-        return <Palette className="h-6 w-6" />;
-      default:
-        return <Code className="h-6 w-6" />;
-    }
-  };
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const roles = ["an Engineer", "a Designer", "a Developer"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (isClient) {
@@ -86,18 +73,21 @@ const Home: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div>
-              {windowSize.width <= 1000 ? (
-                <div
-                  style={
-                    {
-                      display: "flex",
-                      alignContent: "center",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      flexDirection: "column",
-                    } as React.CSSProperties
-                  }
-                >
+                {windowSize.width <= 1000 ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    style={
+                      {
+                        display: "flex",
+                        alignContent: "center",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flexDirection: "column",
+                      } as React.CSSProperties
+                    }
+                  >
                   <div>
                     <ReactCompareSlider
                       className="avatarSmallScreen"
@@ -146,7 +136,7 @@ const Home: React.FC = () => {
                         />
                       }
                     />
-                    <div
+                    <motion.div
                       style={
                         {
                           display: "flex",
@@ -157,8 +147,17 @@ const Home: React.FC = () => {
                           marginTop: "15px",
                         } as React.CSSProperties
                       }
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      {
+                      <motion.a
+                        href="https://github.com/raka-raprast"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
                         <BsGithub
                           size={30}
                           className="text"
@@ -169,8 +168,14 @@ const Home: React.FC = () => {
                             } as React.CSSProperties
                           }
                         />
-                      }
-                      {
+                      </motion.a>
+                      <motion.a
+                        href="https://www.instagram.com/raka.raprast/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
                         <BsInstagram
                           size={30}
                           className="text"
@@ -180,17 +185,23 @@ const Home: React.FC = () => {
                             } as React.CSSProperties
                           }
                         />
-                      }
-                      {
+                      </motion.a>
+                      <motion.a
+                        href="https://www.linkedin.com/in/raka-raprast/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
                         <BsLinkedin
                           size={30}
                           className="text"
                           style={{ marginRight: "15px" } as React.CSSProperties}
                         />
-                      }
-                    </div>
+                      </motion.a>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               ) : null}
               <div
                 style={
@@ -199,77 +210,154 @@ const Home: React.FC = () => {
                   } as React.CSSProperties
                 }
               >
-                <div>
-                  <h1
-                    className="name"
-                    style={
-                      {
-                        textAlign:
-                          windowSize.width <= 1000 ? "center" : "start",
-                        marginBottom: "15px",
-                        marginTop: windowSize.width <= 1000 ? "20px" : null,
-                      } as React.CSSProperties
-                    }
-                  >
-                    Raka Ramadhani Aulia Prasetyo
-                  </h1>
-                  <p
+                 <div>
+                   <div
+                     style={{
+                       marginBottom: "25px",
+                       marginTop: windowSize.width <= 1000 ? "20px" : "0px",
+                     } as React.CSSProperties}
+                   >
+                     <motion.p
+                       className="text"
+                       style={{
+                         fontSize: "1.25rem",
+                         marginBottom: "5px",
+                       }}
+                       initial={{ opacity: 0, y: 20 }}
+                       animate={{ opacity: 1, y: 0 }}
+                       transition={{ duration: 0.5, delay: 0.3 }}
+                     >
+                       Hi, I'm
+                     </motion.p>
+                     <h1
+                       className="name"
+                       style={{
+                         marginBottom: "10px",
+                         fontSize: windowSize.width <= 1000 ? "2.5rem" : "3.5rem",
+                         lineHeight: "1.2",
+                       } as React.CSSProperties}
+                     >
+                       Raka Ramadhani Aulia Prasetyo
+                     </h1>
+                     <motion.div
+                       style={{
+                         display: "flex",
+                         alignItems: "center",
+                         gap: "10px",
+                       }}
+                       initial={{ opacity: 0 }}
+                       animate={{ opacity: 1 }}
+                       transition={{ duration: 0.5, delay: 0.5 }}
+                     >
+                       <span
+                         className="text"
+                         style={{
+                           fontSize: "1.25rem"
+                         }}
+                       >
+                        I am
+                       </span>
+                       <motion.p
+                         key={roles[currentRoleIndex]}
+                         className="text"
+                         style={{
+                           fontSize: "1.5rem",
+                           fontWeight: "bold",
+                           background:
+                             "linear-gradient(135deg, var(--gradient-start), var(--gradient-end))",
+                           WebkitBackgroundClip: "text",
+                           WebkitTextFillColor: "transparent",
+                           backgroundClip: "text",
+                           display: "inline-block",
+                           minWidth: "120px",
+                         }}
+                         initial={{ opacity: 0, y: 10 }}
+                         animate={{ opacity: 1, y: 0 }}
+                         transition={{ duration: 0.3 }}
+                       >
+                         {roles[currentRoleIndex]}
+                       </motion.p>
+                     </motion.div>
+                   </div>
+                  <motion.p
                     className="description"
-                    style={
-                      {
-                        fontSize: "medium",
-                        textAlign:
-                          windowSize.width <= 1000 ? "justify" : "start",
-                      } as React.CSSProperties
-                    }
+                    style={{
+                      fontSize: "1rem",
+                      lineHeight: "1.6",
+                      textAlign: windowSize.width <= 1000 ? "justify" : "start",
+                      maxWidth: "600px"
+                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
                   >
-                    Hey there, tech aficionados and digital wanderers! I&apos;m
-                    Raka from Balikpapan, East Kalimantan, Indonesia. With an
-                    Electrical Engineering degree from Universitas Balikpapan,
-                    I’m passionate about AI, Mobile Development, and Web
-                    Development. I groove with Flutter and React Native for
-                    mobile, and dance through the web with ReactJS and NextJS,
-                    with HTML and CSS as my trusty sidekicks. Beyond coding, I
-                    dive into 3D printing, crafting electrical tools as a hobby.
-                    This website is my journey through circuits, code, and
-                    creativity. Buckle up and explore the funky side of tech
-                    with me!
-                  </p>
-                  {skills.map((skillCategory) => (
-                    <div key={skillCategory.category}>
-                      <p
-                        className="text"
-                        style={{
-                          marginTop: "10px",
-                          marginBottom: "10px",
-                          fontWeight: "bolder",
-                          textAlign:
-                            windowSize.width <= 1000 ? "center" : "start",
-                        }}
-                      >
-                        {skillCategory.category}
-                      </p>
-                      <div
-                        className="skillLogoContainer"
-                        style={{
-                          justifyContent:
-                            windowSize.width <= 1000 ? "center" : "start",
-                        }}
-                      >
-                        {skillCategory.items.map((item) => (
-                          <Tooltip key={item.title} title={item.title}>
-                            <div className="skillLogo">
-                              <p>{item.title}</p>
-                            </div>
-                          </Tooltip>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
+                    Electrical Engineering graduate from Universitas Balikpapan,
+                    passionate about AI, Mobile, and Web Development. Specialized in
+                    Flutter, React Native, ReactJS, and NextJS, I build
+                    innovative digital solutions that bridge creativity with
+                    technology. Beyond coding, I explore 3D printing and craft
+                    electrical tools as a hobby.
+                  </motion.p>
+                  <motion.div
+                    style={{
+                      display: "flex",
+                      gap: "15px",
+                      marginTop: "30px",
+                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                  >
+                    <motion.a
+                      href="/experience"
+                      style={{
+                        padding: "12px 30px",
+                        background:
+                          "linear-gradient(135deg, var(--gradient-start), var(--gradient-end))",
+                        borderRadius: "8px",
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        display: "inline-block",
+                        boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+                        color: "var(--color-text-p)",
+                      } as React.CSSProperties}
+                      whileHover={{ scale: 1.05, boxShadow: "0 6px 20px rgba(0, 0, 0, 0.3)" }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      View My Work
+                    </motion.a>
+                    <motion.a
+                      href="https://github.com/raka-raprast"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        padding: "12px 30px",
+                        border: "2px solid var(--gradient-start)",
+                        color: "var(--text-primary)",
+                        borderRadius: "8px",
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        display: "inline-block",
+                      } as React.CSSProperties}
+                      whileHover={{
+                        scale: 1.05,
+                        background: "var(--gradient-start)",
+                        color: "white",
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {<motion.div className="text">GitHub Profile</motion.div>}
+                    </motion.a>
+                  </motion.div>
+
                 </div>
 
                 {windowSize.width <= 1000 ? null : (
-                  <div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
                     <ReactCompareSlider
                       className="avatar"
                       style={{ marginLeft: "60px" } as React.CSSProperties}
@@ -311,7 +399,7 @@ const Home: React.FC = () => {
                       }
                     />
 
-                    <div
+                    <motion.div
                       style={
                         {
                           display: "flex",
@@ -319,14 +407,19 @@ const Home: React.FC = () => {
                           justifyContent: "center",
                           alignItems: "center",
                           flexDirection: "row",
-                          marginTop: "15px",
+                          marginTop: "20px",
                         } as React.CSSProperties
                       }
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      <a
+                      <motion.a
                         href="https://github.com/raka-raprast"
                         target="_blank"
                         rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <BsGithub
                           size={30}
@@ -338,11 +431,13 @@ const Home: React.FC = () => {
                             } as React.CSSProperties
                           }
                         />
-                      </a>
-                      <a
+                      </motion.a>
+                      <motion.a
                         href="https://www.instagram.com/raka.raprast/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <BsInstagram
                           size={30}
@@ -353,11 +448,13 @@ const Home: React.FC = () => {
                             } as React.CSSProperties
                           }
                         />
-                      </a>
-                      <a
+                      </motion.a>
+                      <motion.a
                         href="https://www.linkedin.com/in/raka-raprast/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <BsLinkedin
                           size={30}
@@ -368,9 +465,9 @@ const Home: React.FC = () => {
                             } as React.CSSProperties
                           }
                         />
-                      </a>
-                    </div>
-                  </div>
+                      </motion.a>
+                    </motion.div>
+                  </motion.div>
                 )}
               </div>
             </div>
@@ -382,56 +479,5 @@ const Home: React.FC = () => {
     </BaseLayout>
   );
 };
-
-const skills = [
-  {
-    category: "Front-End",
-    items: [
-      { title: "ReactJS", src: "/reactjs.png", alt: "react" },
-      { title: "NextJS", src: "/nextjs.png", alt: "nextjs" },
-      { title: "Flutter", src: "/flutter.png", alt: "flutter" },
-      { title: "React Native", src: "/react-native.png", alt: "react-native" },
-      // { title: "WordPress", src: "/wordpress.png", alt: "wordpress" },
-    ],
-  },
-  {
-    category: "Back-End",
-    items: [
-      { title: "NestJS", src: "/nestjs.png", alt: "nestjs" },
-      { title: "FastAPI", src: "/fastapi.png", alt: "fastapi" },
-      { title: "Django", src: "/django.png", alt: "django" },
-      { title: "Gin-Gonic", src: "/gin-gonic.jpg", alt: "gin-gonic" },
-    ],
-  },
-  {
-    category: "Artificial Intelligence",
-    items: [
-      { title: "TensorFlow", src: "/tensorflow.png", alt: "tensorflow" },
-      { title: "Keras", src: "/keras.png", alt: "keras" },
-      { title: "PyTorch", src: "/pytorch.png", alt: "pytorch" },
-    ],
-  },
-  {
-    category: "Database",
-    items: [
-      { title: "PostgreSQL", src: "/postgresql.png", alt: "postgresql" },
-      { title: "MongoDB", src: "/mongodb.png", alt: "mongodb" },
-      // { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
-      // { title: "Firebase", src: "/firebase.png", alt: "firebase" },
-    ],
-  },
-  {
-    category: "Web3",
-    items: [
-      { title: "Solidity", src: "/solidity.png", alt: "solidity" },
-      // { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
-      // { title: "Firebase", src: "/firebase.png", alt: "firebase" },
-    ],
-  },
-  // {
-  //   category: "DevOps",
-  //   items: [{ title: "Docker", src: "/docker.png", alt: "docker" }],
-  // },
-];
 
 export default Home;
