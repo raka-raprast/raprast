@@ -113,7 +113,7 @@ const Sidebar = () => {
                 src="/ai_avatar.png"
                 alt="logo"
               />
-              <p className="sidebar__logo-name">Raka Prasetyo</p>
+              <p className="sidebar__logo-name">Raka R.A Prasetyo</p>
             </div>
             <div style={{
               display: "flex",

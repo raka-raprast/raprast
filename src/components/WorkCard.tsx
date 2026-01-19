@@ -39,14 +39,14 @@ export default function WorkCard({ workExperience, index = 0 }: WorkCardProps) {
           border: "1px solid var(--color-border)",
           backgroundColor: "var(--color-bg)",
           boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
           cursor: "default",
         } as React.CSSProperties
       }
       whileHover={{
-        transform: "translateY(-4px)",
+        y: -4,
         boxShadow: "0 12px 24px -8px rgba(98, 150, 196, 0.3), 0 6px 12px -6px rgba(98, 150, 196, 0.2)",
-        borderColor: "var(--gradient-start)"
+        borderColor: "var(--gradient-start)",
+        transition: { duration: 0.2, ease: "easeOut" }
       }}
     >
       <div
