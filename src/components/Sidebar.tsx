@@ -79,17 +79,14 @@ const Sidebar = () => {
               passHref
               className={`navbar__link ${router.pathname === href ? "navbar__link--active" : ""}`}
             >
-              <span className="sidebar__icon">
-                <Icon />
-              </span>
+              <Icon size={24} />
             </Link>
           </li>
         ))}
         <li className="bottom-nav__item" onClick={toggleDarkMode}>
-          <div className="navbar__link">
-            <span className="sidebar__icon">
-            {isDarkMode ? <BsMoon /> : <BsSun />}
-          </span></div>
+          <div className="navbar__link" style={{ cursor: 'pointer' }}>
+            {isDarkMode ? <BsMoon size={24} /> : <BsSun size={24} />}
+          </div>
         </li>
       </ul>
     </nav>

@@ -50,6 +50,9 @@
   border-radius: 10px;
 }
 
+* {
+  scrollbar-gutter: stable;
+}
 
 :root {
   --color-primary: #007A8D;
@@ -99,10 +102,18 @@
   font-family: "Flipboard Sans", sans-serif;
 }
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background-color: var(--color-bg);
   font-family: "Flipboard Sans", sans-serif;
   font-size: 18px;
+  scrollbar-gutter: stable;
+  height: 100%;
+  overflow: auto;
 }
 
 .layout {
@@ -110,6 +121,7 @@ body {
   position: relative;
   gap: 2rem;
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  min-height: 100vh;
   /* background-color: var(--color-bg); */
 }
 
@@ -137,6 +149,9 @@ body {
 .layout__main-content_mobile {
   flex-grow: 1;
   background-color: var(--color-bg);
+  padding-bottom: 80px;
+  width: 100%;
+  min-height: 100%;
   /* background: linear-gradient(135deg, var(--gradient-start-inverse), var(--gradient-end-inverse)); */
 }
 
@@ -185,28 +200,42 @@ body {
 }
 
 .bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-around;
-  background-color: var(--color-bg);
-  padding: 0.5rem 0;
-  border-top: 1px solid var(--gradient-start);
-  z-index: 1000;
+  position: fixed !important;
+  inset: auto 0 0 0 !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  background-color: var(--color-bg) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid var(--gradient-start) !important;
+  z-index: 1000 !important;
+  height: 70px !important;
+  min-height: 70px !important;
+  max-height: 70px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
 }
 
 .bottom-nav__list {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
+  display: flex !important;
+  width: 100% !important;
+  justify-content: space-around !important;
+  height: 70px !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .bottom-nav__item {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 70px !important;
+  min-height: 70px !important;
+  max-height: 70px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .bottom-nav__icon {
@@ -300,17 +329,19 @@ body {
 }
 
 .navbar__link {
-  display: inline-block;
-  font-size: 18px;
-  font-family: "Flipboard Sans", sans-serif;
-  text-decoration: none;
-  color: var(--color-text-p);
-  padding: 0.8rem 1rem;
-  display: flex;
-  /* box-shadow: 0px 1px 1px var(--gradient-start); */
-  /* background-color: var(--color-sidebar-item); */
-  margin-bottom: 1rem;
-  border-radius: 0.8rem;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 18px !important;
+  font-family: "Flipboard Sans", sans-serif !important;
+  text-decoration: none !important;
+  color: var(--color-text-p) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.8rem !important;
+  transition: color 0.2s ease !important;
+  margin: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .sidebar__link:hover {
@@ -321,7 +352,6 @@ body {
 
 .navbar__link:hover {
   cursor: pointer;
-  /* background-color: var(--gradient-start); */
   color: var(--gradient-end);
 }
 
@@ -331,13 +361,16 @@ body {
 }
 
 .navbar__link--active {
-  color: var(--color-bg);
-  background-color: var(--gradient-start);
+  color: var(--gradient-start);
 }
 
 .sidebar__icon {
-  display: inline-block;
-  font-size: 1.2rem;
+  display: inline-flex !important;
+  font-size: 1.2rem !important;
+  width: 24px !important;
+  height: 24px !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .sidebar__name {

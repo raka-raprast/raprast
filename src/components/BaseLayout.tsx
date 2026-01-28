@@ -80,6 +80,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
       <div className="layout">
         <Head>
           <title>Raprast - Full Stack Engineer</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
           <meta property="og:title" content="Raprast - Full Stack Engineer" />
           <link rel="icon" href="/logo.ico" />
           <link rel="icon" type="image/png" href="/ai_avatar.png" />

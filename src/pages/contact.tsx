@@ -265,7 +265,7 @@ const Contact: React.FC = () => {
           <div
             style={{
               minHeight: "calc(100vh - 80px)",
-              padding: "90px 90px 25px 90px",
+              padding: windowSize.width <= 1000 ? "20px 16px 25px 16px" : "90px 90px 25px 90px",
             }}
           >
             <motion.div

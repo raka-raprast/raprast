@@ -140,7 +140,7 @@ const Home: React.FC = () => {
 
   return (
     <BaseLayout>
-      <div className="home">
+      <div className="home" style={{ minHeight: "calc(100vh - 80px)", padding: windowSize.width <= 1000 ? "20px 16px 25px 16px" : "90px 90px 25px 90px", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
         {!isLoading && (
           <div
             style={{
@@ -549,9 +549,11 @@ const Home: React.FC = () => {
                   <motion.div
                     style={{
                       display: "flex",
+                      flexDirection: windowSize.width <= 1000 ? "column" : "row",
                       gap: "15px",
                       marginTop: "30px",
-                    }}
+                      alignItems: windowSize.width <= 1000 ? "center" : "flex-start",
+                    } as React.CSSProperties}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.9 }}

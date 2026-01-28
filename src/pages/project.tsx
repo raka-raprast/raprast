@@ -256,7 +256,7 @@ const Project: React.FC = () => {
       <div
         style={{
           minHeight: "calc(100vh - 80px)",
-          padding: "90px 90px 25px 90px",
+          padding: windowSize.width <= 1000 ? "20px 16px 25px 16px" : "90px 90px 25px 90px",
           position: "relative",
         }}
       >
@@ -280,8 +280,9 @@ const Project: React.FC = () => {
                 <div
                   style={{
                     display: "flex",
+                    flexDirection: windowSize.width <= 1000 ? "column" : "row",
                     justifyContent: "space-between",
-                    alignItems: "center",
+                    alignItems: windowSize.width <= 1000 ? "stretch" : "center",
                     marginBottom: "40px",
                     gap: "20px",
                   }}
@@ -313,10 +314,12 @@ const Project: React.FC = () => {
                       cursor: "pointer",
                       display: "flex",
                       alignItems: "center",
+                      justifyContent: "center",
                       gap: "8px",
                       transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                       fontFamily: "inherit",
                       flexShrink: 0,
+                      width: windowSize.width <= 1000 ? "100%" : "auto",
                     }}
                     whileHover={{
                       scale: 1.05,
