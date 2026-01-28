@@ -2,7 +2,14 @@
 
 @font-face {
   font-family: 'Mbilan';
-  src: url('/fonts/mbilan.ttf') format('ttf');
+  src: url('/fonts/mbilan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Flipboard Sans';
+  src: url('/fonts/flipboard-sans.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -83,9 +90,19 @@
   box-sizing: border-box;
 }
 
+/* Font family utilities */
+.font-title {
+  font-family: "Mbilan", sans-serif;
+}
+
+.font-body {
+  font-family: "Flipboard Sans", sans-serif;
+}
+
 body {
   background-color: var(--color-bg);
-  font-family: "Ubuntu Mono", sans-serif;
+  font-family: "Flipboard Sans", sans-serif;
+  font-size: 18px;
 }
 
 .layout {
@@ -260,6 +277,7 @@ body {
 .sidebar__logo-name {
   font-size: 1.2rem;
   font-weight: 600;
+  font-family: "Mbilan", sans-serif;
   color: var(--color-text-p);
 }
 
@@ -269,7 +287,8 @@ body {
 
 .sidebar__link {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 18px;
+  font-family: "Flipboard Sans", sans-serif;
   text-decoration: none;
   color: var(--color-text-p);
   padding: 0.8rem 1rem;
@@ -282,7 +301,8 @@ body {
 
 .navbar__link {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 18px;
+  font-family: "Flipboard Sans", sans-serif;
   text-decoration: none;
   color: var(--color-text-p);
   padding: 0.8rem 1rem;
@@ -405,15 +425,20 @@ body {
 .name {
   padding: "0px 0px 15px 0px";
   font-size: x-large;
+  font-family: "Mbilan", sans-serif;
   color: var(--color-text-p);
 }
 
 .text {
   color: var(--color-text-p);
+  font-family: "Flipboard Sans", sans-serif;
+  font-size: 18px;
 }
 
 .description {
   color: var(--color-text-desc);
+  font-family: "Flipboard Sans", sans-serif;
+  font-size: 18px;
 }
 
 .skillLogoContainer {
