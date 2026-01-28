@@ -361,7 +361,20 @@ body {
 }
 
 .navbar__link--active {
-  color: var(--gradient-start);
+  color: var(--gradient-start) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.navbar__link--active::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--gradient-start);
+    border-radius: 50%;
 }
 
 .sidebar__icon {
