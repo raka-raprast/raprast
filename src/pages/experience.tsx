@@ -148,14 +148,19 @@ const Experience: React.FC = () => {
           width: window.innerWidth,
           height: window.innerHeight,
         });
+        if (window.innerWidth <= 1000) {
+          setMousePosition({ x: 0, y: 0 });
+        }
       };
 
       const handleMouseMove = (e: MouseEvent) => {
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        const mouseX = e.clientX - centerX;
-        const mouseY = e.clientY - centerY;
-        setMousePosition({ x: mouseX, y: mouseY });
+        if (window.innerWidth > 1000) {
+          const centerX = window.innerWidth / 2;
+          const centerY = window.innerHeight / 2;
+          const mouseX = e.clientX - centerX;
+          const mouseY = e.clientY - centerY;
+          setMousePosition({ x: mouseX, y: mouseY });
+        }
       };
 
       window.addEventListener("resize", handleResize);
