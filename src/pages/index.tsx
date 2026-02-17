@@ -544,12 +544,7 @@ const Home: React.FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.7 }}
                   >
-                    Electrical Engineering graduate from Universitas Balikpapan,
-                    passionate about AI, Mobile, and Web Development. Specialized in
-                    Flutter, React Native, ReactJS, and NextJS, I build
-                    innovative digital solutions that bridge creativity with
-                    technology. Beyond coding, I explore 3D printing and craft
-                    electrical tools as a hobby.
+                    An Electrical Engineering graduate passionate about AI, Mobile, and Web Development. I build innovative digital solutions that bridge creativity with technology. Beyond coding, I explore 3D printing and craft electrical tools as a hobby.
                   </motion.p>
                   <motion.div
                     style={{

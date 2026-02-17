@@ -60,7 +60,7 @@ const Chatbot: React.FC = () => {
     if (chatHistoryRef.current) {
       chatHistoryRef.current.scrollTop = chatHistoryRef.current.scrollHeight;
     }
-  }, [history]);
+  }, [history, isOpen]);
 
   const handleSend = async () => {
     if (input.trim() === "" || isLoading) return;
