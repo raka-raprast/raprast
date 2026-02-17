@@ -2,6 +2,7 @@ import React from "react";
 import { SidebarProvider } from "@/context/SidebarContext";
 import "@/styles/globals.css";
 import { Oswald } from '@next/font/google';
+import Chatbot from "@/components/Chatbot";
 
 interface AppProps {
   Component: React.ElementType;
@@ -12,6 +13,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <SidebarProvider>
       <Component {...pageProps} />
+      <Chatbot />
     </SidebarProvider>
   );
 };
