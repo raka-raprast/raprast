@@ -91,7 +91,7 @@ const Chatbot: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         style={{
           position: "fixed",
-          bottom: windowSize.width <= 768 ? "20px" : "30px",
+          bottom: windowSize.width <= 768 ? "90px" : "30px",
           right: windowSize.width <= 768 ? "20px" : "30px",
           width: "60px",
           height: "60px",
@@ -143,7 +143,7 @@ const Chatbot: React.FC = () => {
             transition={{ duration: 0.3 }}
             style={{
               position: "fixed",
-              bottom: windowSize.width <= 768 ? "90px" : "100px",
+              bottom: windowSize.width <= 768 ? "160px" : "100px",
               right: windowSize.width <= 768 ? "20px" : "30px",
               width: windowSize.width <= 768 ? "calc(100vw - 40px)" : "350px",
               height: windowSize.width <= 768 ? "70vh" : "500px",
