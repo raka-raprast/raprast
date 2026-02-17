@@ -227,6 +227,7 @@ const Chatbot: React.FC = () => {
                   color: "white",
                   outline: "none",
                   cursor: isLoading ? "not-allowed" : "text",
+                  fontSize: "1rem",
                 }}
               />
               <button
