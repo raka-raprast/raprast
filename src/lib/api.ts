@@ -16,6 +16,7 @@ export const fetchData = async (endpoint: string) => {
 
 export const askChatbot = async (question: string) => {
   try {
+    console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
     const response = await api.post('/cv-chat', { question });
     return response.data;
   } catch (error) {
