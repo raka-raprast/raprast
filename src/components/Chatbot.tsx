@@ -200,6 +200,9 @@ const Chatbot: React.FC = () => {
               {isLoading && (
                 <div style={{ alignSelf: "flex-start" }}>
                   <ReactLoading type="bubbles" color={"var(--gradient-start)"} height={40} width={60} />
+                  <p style={{ fontSize: "0.8rem", color: "#aaa", marginTop: "5px", fontStyle: "italic" }}>
+                    Feel free to close this and explore while I&apos;m thinking...
+                  </p>
                 </div>
               )}
             </div>
@@ -216,7 +219,7 @@ const Chatbot: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSend()}
-                placeholder={isLoading ? "Thinking..." : "Ask about my CV..."}
+                placeholder={isLoading ? "Thinking..." : "Ask about me..."}
                 disabled={isLoading}
                 style={{
                   flex: 1,
