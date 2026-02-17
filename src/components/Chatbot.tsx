@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMessageSquare, FiX, FiSend } from "react-icons/fi";
 import { askChatbot } from "../lib/api";
 import ReactLoading from "react-loading";
+import ReactMarkdown from 'react-markdown';
 
 interface ChatMessage {
   sender: "user" | "bot";
@@ -194,7 +195,7 @@ const Chatbot: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  {message.text}
+                  <ReactMarkdown>{message.text}</ReactMarkdown>
                 </motion.div>
               ))}
               {isLoading && (
