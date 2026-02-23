@@ -14,9 +14,9 @@ export const fetchData = async (endpoint: string) => {
   }
 };
 
-export const askChatbot = async (question: string) => {
+export const askChatbot = async (question: string, lastMessages: { role: string; content: string }[]) => {
   try {
-    const response = await api.post('/cv-chat', { question });
+    const response = await api.post('/cv-chat', { question, lastMessages });
     return response.data;
   } catch (error) {
     console.error('Error posting data to chatbot:', error);

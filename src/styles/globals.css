@@ -315,13 +315,14 @@ body {
 }
 
 .sidebar__link {
-  display: inline-block;
   font-size: 18px;
   font-family: "Flipboard Sans", sans-serif;
   text-decoration: none;
   color: var(--color-text-p);
   padding: 0.8rem 1rem;
   display: flex;
+  align-items: center;
+  gap: 0.8rem;
   box-shadow: 0px 1px 1px var(--gradient-start);
   /* background-color: var(--color-sidebar-item); */
   margin-bottom: 1rem;

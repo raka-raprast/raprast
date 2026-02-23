@@ -335,7 +335,7 @@ const Project: React.FC = () => {
                     }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => {
-                      window.open("https://raprast-labs.space", "_blank");
+                      window.open("https://raprast-labs.netlify.app", "_blank");
                     }}
                   >
                     <ExternalLink size={18} />

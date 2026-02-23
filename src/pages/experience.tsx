@@ -434,7 +434,7 @@ const Experience: React.FC = () => {
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(auto-fit, minmax(325px, 1fr))",
-                    gap: "24px",
+                    gap: "16px",
                     marginBottom: "60px",
                   }}
                   initial="hidden"

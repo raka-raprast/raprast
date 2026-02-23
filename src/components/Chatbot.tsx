@@ -4,17 +4,21 @@ import { FiMessageSquare, FiX, FiSend } from "react-icons/fi";
 import { askChatbot } from "../lib/api";
 import ReactLoading from "react-loading";
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ChatMessage {
   sender: "user" | "bot";
   text: string;
 }
 
+const CONVERSATION_HISTORY_LIMIT = 5;
+
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isCacheLoading, setIsCacheLoading] = useState(true);
   const chatHistoryRef = useRef<HTMLDivElement>(null);
 
   const [windowSize, setWindowSize] = useState({
@@ -47,6 +51,7 @@ const Chatbot: React.FC = () => {
       localStorage.removeItem("chatHistory");
       localStorage.removeItem("chatDate");
     }
+    setIsCacheLoading(false);
   }, []);
   
   useEffect(() => {
@@ -72,7 +77,11 @@ const Chatbot: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const botResponse = await askChatbot(input);
+      const apiHistory = history.slice(-CONVERSATION_HISTORY_LIMIT).map((message) => ({
+        role: message.sender === "user" ? "user" : "assistant",
+        content: message.text,
+      }));
+      const botResponse = await askChatbot(input, apiHistory);
       const botMessage: ChatMessage = { sender: "bot", text: botResponse };
       setHistory((prev) => [...prev, botMessage]);
     } catch (error) {
@@ -165,9 +174,26 @@ const Chatbot: React.FC = () => {
                 color: "white",
                 fontWeight: "bold",
                 fontSize: "1.1rem",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
               }}
             >
-              Raprast Bot
+              <span>Raprast Bot</span>
+              <button
+                onClick={() => setIsOpen(false)}
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  color: "white",
+                  cursor: "pointer",
+                  padding: 0,
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <FiX size={24} />
+              </button>
             </div>
             <div
               ref={chatHistoryRef}
@@ -180,7 +206,16 @@ const Chatbot: React.FC = () => {
                 gap: "10px",
               }}
             >
-              {history.map((message, index) => (
+              {isCacheLoading ? (
+                <div style={{ alignSelf: "center", marginTop: "20px" }}>
+                  <ReactLoading type="bubbles" color={"var(--gradient-start)"} height={40} width={60} />
+                  <p style={{ fontSize: "0.8rem", color: "#aaa", marginTop: "5px", fontStyle: "italic", textAlign: "center" }}>
+                    Loading chat history...
+                  </p>
+                </div>
+              ) : (
+                <>
+                  {history.map((message, index) => (
                 <motion.div
                   key={index}
                   style={{
@@ -190,12 +225,27 @@ const Chatbot: React.FC = () => {
                     padding: "10px 15px",
                     borderRadius: "15px",
                     maxWidth: "80%",
+                    overflowWrap: "break-word",
                   }}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <ReactMarkdown>{message.text}</ReactMarkdown>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      a: ({ node, ...props }) => (
+                        <a
+                          style={{ color: "var(--gradient-start)", textDecoration: "underline", fontWeight: "bold" }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          {...props}
+                        />
+                      ),
+                    }}
+                  >
+                    {message.text}
+                  </ReactMarkdown>
                 </motion.div>
               ))}
               {isLoading && (
@@ -205,6 +255,8 @@ const Chatbot: React.FC = () => {
                     Feel free to close this and explore while I&apos;m thinking...
                   </p>
                 </div>
+              )}
+                </>
               )}
             </div>
             <div
