@@ -10,6 +10,7 @@ import {
 } from "react-compare-slider";
 import ReactLoading from "react-loading";
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const Home: React.FC = () => {
   const isClient = typeof window !== "undefined"; // Check if running on the client side
@@ -142,9 +143,9 @@ const Home: React.FC = () => {
       };
     }
   }, [isClient]);
-
   return (
     <BaseLayout>
+      <SEO title="Home | Raka Ramadhani Aulia Prasetyo" url="https://raprast.asia" />
       <div className="home" style={{ minHeight: "calc(100vh - 80px)", padding: windowSize.width <= 1000 ? "20px 16px 25px 16px" : "90px 90px 25px 90px", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
         {!isLoading && (
           <div
@@ -315,7 +316,7 @@ const Home: React.FC = () => {
                               "0px 1px 1px var(--gradient-start-inverse)",
                           }}
                           src="/ai_avatar.png"
-                          alt="ai_avatar"
+                          alt="Raka Ramadhani AI Avatar"
                           width={140}
                           height={180}
                         />
@@ -327,7 +328,7 @@ const Home: React.FC = () => {
                               "0px 1px 1px var(--gradient-start-inverse)",
                           }}
                           src="/real_avatar.png"
-                          alt="real_avatar"
+                          alt="Raka Ramadhani Real Portrait"
                           width={140}
                           height={140}
                         />
@@ -366,13 +367,12 @@ const Home: React.FC = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      <motion.a
-                        href="https://github.com/raka-raprast"
+                      <motion.a href="https://github.com/raka-raprast"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
-                      >
+                       aria-label="GitHub Profile">
                         <BsGithub
                           size={30}
                           className="text"
@@ -384,13 +384,12 @@ const Home: React.FC = () => {
                           }
                         />
                       </motion.a>
-                      <motion.a
-                        href="https://www.instagram.com/raka.raprast/"
+                      <motion.a href="https://www.instagram.com/raka.raprast/"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
-                      >
+                       aria-label="Instagram Profile">
                         <BsInstagram
                           size={30}
                           className="text"
@@ -401,13 +400,12 @@ const Home: React.FC = () => {
                           }
                         />
                       </motion.a>
-                      <motion.a
-                        href="https://www.linkedin.com/in/raka-raprast/"
+                      <motion.a href="https://www.linkedin.com/in/raka-raprast/"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
-                      >
+                       aria-label="LinkedIn Profile">
                         <BsLinkedin
                           size={30}
                           className="text"
@@ -576,8 +574,7 @@ const Home: React.FC = () => {
                     >
                       View My Work
                     </motion.a>
-                    <motion.a
-                      href="https://github.com/raka-raprast"
+                    <motion.a href="https://github.com/raka-raprast"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
@@ -595,7 +592,7 @@ const Home: React.FC = () => {
                         color: "white",
                       }}
                       whileTap={{ scale: 0.98 }}
-                    >
+                     aria-label="GitHub Profile">
                       {<motion.div className="text">GitHub Profile</motion.div>}
                     </motion.a>
                   </motion.div>
@@ -616,7 +613,7 @@ const Home: React.FC = () => {
                       itemOne={
                         <ReactCompareSliderImage
                           src="/ai_avatar.png"
-                          alt="Image one"
+                          alt="Raka Ramadhani AI Avatar comparison"
                           width={140}
                           height={140}
                         />
@@ -624,7 +621,7 @@ const Home: React.FC = () => {
                       itemTwo={
                         <ReactCompareSliderImage
                           src="/real_avatar.png"
-                          alt="Image two"
+                          alt="Raka Ramadhani Real Portrait comparison"
                           width={140}
                           height={140}
                         />
@@ -664,13 +661,12 @@ const Home: React.FC = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      <motion.a
-                        href="https://github.com/raka-raprast"
+                      <motion.a href="https://github.com/raka-raprast"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
-                      >
+                       aria-label="GitHub Profile">
                         <BsGithub
                           size={30}
                           className="text"
@@ -682,13 +678,12 @@ const Home: React.FC = () => {
                           }
                         />
                       </motion.a>
-                      <motion.a
-                        href="https://www.instagram.com/raka.raprast/"
+                      <motion.a href="https://www.instagram.com/raka.raprast/"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
-                      >
+                       aria-label="Instagram Profile">
                         <BsInstagram
                           size={30}
                           className="text"
@@ -699,13 +694,12 @@ const Home: React.FC = () => {
                           }
                         />
                       </motion.a>
-                      <motion.a
-                        href="https://www.linkedin.com/in/raka-raprast/"
+                      <motion.a href="https://www.linkedin.com/in/raka-raprast/"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
-                      >
+                       aria-label="LinkedIn Profile">
                         <BsLinkedin
                           size={30}
                           className="text"

@@ -8,6 +8,7 @@ import ReactLoading from "react-loading";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tooltip } from "@mui/material";
 import { Code, Palette, Terminal, Globe, Database, Server, Download, FileText } from "lucide-react";
+import SEO from "@/components/SEO";
 
 interface Skill {
   name: string;
@@ -175,6 +176,7 @@ const Experience: React.FC = () => {
 
   return (
     <BaseLayout>
+      <SEO title="Experience | Raka Ramadhani Aulia Prasetyo" description="View my work experience, education, and skills." url="https://raprast.asia/experience" />
       {!isLoading && !isEducationLoading && !isWorkLoading && (
         <div
           style={{
@@ -583,7 +585,7 @@ const skills = [
       { title: "NextJS", src: "/nextjs.png", alt: "nextjs" },
       { title: "Flutter", src: "/flutter.png", alt: "flutter" },
       { title: "React Native", src: "/react-native.png", alt: "react-native" },
-      // { title: "WordPress", src: "/wordpress.png", alt: "wordpress" },
+      { title: "ElectronJS", src: "/electronjs.png", alt: "electronjs" },
     ],
   },
   {
@@ -593,6 +595,7 @@ const skills = [
       { title: "FastAPI", src: "/fastapi.png", alt: "fastapi" },
       { title: "Django", src: "/django.png", alt: "django" },
       { title: "Gin-Gonic", src: "/gin-gonic.jpg", alt: "gin-gonic" },
+      { title: "Dotnet", src: "/dotnet.png", alt: "dotnet" },
     ],
   },
   {
@@ -608,7 +611,7 @@ const skills = [
     items: [
       { title: "PostgreSQL", src: "/postgresql.png", alt: "postgresql" },
       { title: "MongoDB", src: "/mongodb.png", alt: "mongodb" },
-      // { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
+      { title: "MySQL", src: "/MySQL.png", alt: "mysql" },
       // { title: "Firebase", src: "/firebase.png", alt: "firebase" },
     ],
   },

@@ -9,6 +9,14 @@
       "link": "https://dribbble.com/shots/26203374-Chatmunication-Messaging-and-Calling-Mobile-App"
     },
     {
+      "name": "Solar Powered Seaweed Heater",
+      "date": "Apr 2025",
+      "imagePath": "/arduino_logo.png",
+      "description": "The increasing demand for high-quality dried seaweed necessitates an efficient and precise drying system. This study proposes the design of a seaweed drying system using the Fuzzy method based on the Internet of Things (IoT). The system is designed to monitor and control temperature and humidity levels in real- time to optimize the drying process. The implementation of IoT enables seaweed\n\nfarmers to monitor the drying progress through a website, as well as perform remote monitoring and automation, thereby enhancing drying efficiency and product quality. The Fuzzy method is used to determine the optimal drying conditions based on automatically detected environmental parameters. The test results show that this system can reduce the drying time to 15 hours, significantly faster compared to traditional methods that take 3 days to 1 week. The application of the Fuzzy method in the drying control system provides better precision and responsiveness, and is capable of adjusting drying parameters based on detected environmental conditions.",
+      "type": "Hardware",
+      "link": "https://github.com/raka-raprast/solar-powered-seaweed-heater"
+    },
+    {
       "name": "KilanAccurate",
       "date": "Mar 2025",
       "imagePath": "/dart_logo.png",

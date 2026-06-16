@@ -5,6 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import ReactLoading from "react-loading";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Project: React.FC = () => {
   const isClient = typeof window !== "undefined";
@@ -133,6 +134,7 @@ const Project: React.FC = () => {
   }, [isClient]);
   return (
     <BaseLayout>
+      <SEO title="Projects | Raka Ramadhani Aulia Prasetyo" description="Explore my software engineering and design projects." url="https://raprast.asia/project" />
       {!isLoading && !isProjectLoading && (
         <div
           style={{

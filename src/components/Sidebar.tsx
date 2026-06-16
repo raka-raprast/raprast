@@ -78,6 +78,7 @@ const Sidebar = () => {
               href={href}
               passHref
               className={`navbar__link ${router.pathname === href ? "navbar__link--active" : ""}`}
+              aria-label={name}
             >
               <Icon size={24} />
             </Link>
@@ -108,7 +109,7 @@ const Sidebar = () => {
                 height={80}
                 className="sidebar__logo"
                 src="/ai_avatar.png"
-                alt="logo"
+                alt="Raka Ramadhani Aulia Prasetyo Avatar Logo"
               />
               <p className="sidebar__logo-name">Raka R.A Prasetyo</p>
             </div>

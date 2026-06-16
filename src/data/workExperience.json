@@ -1,6 +1,36 @@
 {
   "workExperience": [
     {
+      "company_name": "VentureSEA",
+      "job_title": "Full Stack Developer",
+      "start_date": "Apr 2026",
+      "end_date": "Present",
+      "skills": [
+        "Typescript",
+        "Golang",
+        "NestJS",
+        "ReactJS",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "imagePath": "/youapp.jpg"
+    },
+    {
+      "company_name": "Alpha Red Solutions",
+      "job_title": "Software Developer",
+      "start_date": "Jan 2026",
+      "end_date": "Present",
+      "skills": [
+        "Typescript",
+        "NestJS",
+        "ElysiaJS",
+        "DotNet",
+        "MySQL",
+        "Redis"
+      ],
+      "imagePath": "/youapp.jpg"
+    },
+    {
       "company_name": "YouApp",
       "job_title": "Senior Software Engineer",
       "start_date": "Jun 2024",

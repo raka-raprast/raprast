@@ -9,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
+import SEO from "@/components/SEO";
 
 const Contact: React.FC = () => {
   const isClient = typeof window !== "undefined";
@@ -131,6 +132,7 @@ const Contact: React.FC = () => {
 
   return (
     <BaseLayout>
+      <SEO title="Contact | Raka Ramadhani Aulia Prasetyo" description="Get in touch with me through email, LinkedIn, or other platforms." url="https://raprast.asia/contact" />
       {!isLoading && (
         <div
           style={{

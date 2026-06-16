@@ -79,21 +79,8 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
     return (
       <div className="layout">
         <Head>
-          <title>Raprast - Full Stack Engineer</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-          <meta property="og:title" content="Raprast - Full Stack Engineer" />
           <link rel="icon" href="/logo.ico" />
           <link rel="icon" type="image/png" href="/ai_avatar.png" />
-          <meta
-            name="description"
-            content="Experienced Full Stack Engineering"
-          />
-          <meta property="og:type" content="website" />
-          <meta property="og:image" content="/logo.ico" />
-          <meta
-            property="og:description"
-            content="Experienced Full Stack Engineering for Your Needs"
-          />
         </Head>
         <Sidebar />
         {isMobile ? (
