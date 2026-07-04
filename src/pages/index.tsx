@@ -8,7 +8,8 @@ import {
   ReactCompareSliderHandle,
   ReactCompareSliderImage,
 } from "react-compare-slider";
-import ReactLoading from "react-loading";
+import dynamic from "next/dynamic";
+const ReactLoading = dynamic(() => import("react-loading"), { ssr: false });
 import { motion, AnimatePresence } from "framer-motion";
 import SEO from "@/components/SEO";
 

@@ -1,7 +1,8 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import Head from "next/head";
-import ReactLoading from "react-loading";
+import dynamic from "next/dynamic";
+const ReactLoading = dynamic(() => import("react-loading"), { ssr: false });
 
 interface BaseLayoutProps {
   children: ReactNode;

@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMessageSquare, FiX, FiSend } from "react-icons/fi";
 import { askChatbot } from "../lib/api";
-import ReactLoading from "react-loading";
+import dynamic from "next/dynamic";
+const ReactLoading = dynamic(() => import("react-loading"), { ssr: false });
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 

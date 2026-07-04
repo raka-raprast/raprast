@@ -8,7 +8,8 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import ReactLoading from "react-loading";
+import dynamic from "next/dynamic";
+const ReactLoading = dynamic(() => import("react-loading"), { ssr: false });
 import SEO from "@/components/SEO";
 
 const Contact: React.FC = () => {
