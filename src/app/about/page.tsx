@@ -51,8 +51,24 @@ export default function AboutPage() {
 
         <Reveal index={1}>
           <Parallax distance={40}>
-            <div className="grade-hover relative aspect-[4/5] overflow-hidden rounded-xl border border-line">
-              <Image src="/real_avatar.png" alt={profile.name} fill className="grade object-cover" sizes="(max-width: 768px) 100vw, 40vw" />
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-xl border border-line">
+              <Image
+                src="/anime_avatar.png"
+                alt={profile.name}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover transition-opacity duration-700 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover:opacity-0"
+              />
+              <Image
+                src="/rl_avatar.png"
+                alt=""
+                aria-hidden
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover:opacity-100"
+              />
             </div>
           </Parallax>
         </Reveal>
