@@ -13,7 +13,7 @@ const channels = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
   { label: "GitHub", value: "@raka-raprast", href: profile.socials.github },
   { label: "LinkedIn", value: "Raka Prasetyo", href: profile.socials.linkedin },
-  { label: "Instagram", value: "@raprast", href: profile.socials.instagram },
+  { label: "Instagram", value: "@raka.raprast", href: profile.socials.instagram },
 ];
 
 export default function ContactPage() {
