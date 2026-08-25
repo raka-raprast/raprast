@@ -10,14 +10,14 @@ import { cn } from "@/lib/cn";
 
 interface ExperienceListProps {
   items: WorkItem[];
+  showPreviews?: boolean;
 }
 
 /**
- * Big numbered rows. On hover (fine pointers) a grayscale preview of the item
- * floats next to the cursor and the other rows dim. On touch, each row shows an
- * inline thumbnail instead.
+ * Big numbered rows. A preview can follow fine-pointer hover and appear inline
+ * on touch; text-only lists opt out of both treatments.
  */
-export function ExperienceList({ items }: ExperienceListProps) {
+export function ExperienceList({ items, showPreviews = true }: ExperienceListProps) {
   const reduce = useReducedMotion();
   const [hovered, setHovered] = useState<number | null>(null);
 
@@ -32,7 +32,7 @@ export function ExperienceList({ items }: ExperienceListProps) {
   };
 
   return (
-    <div onMouseMove={reduce ? undefined : onMove} className="relative">
+    <div onMouseMove={reduce || !showPreviews ? undefined : onMove} className="relative">
       <ul className="border-t border-line">
         {items.map((item, i) => {
           const dim = hovered !== null && hovered !== i;
@@ -57,14 +57,15 @@ export function ExperienceList({ items }: ExperienceListProps) {
                     </span>
                     <span className="label hidden sm:inline">{item.role ?? "Project"}</span>
                   </span>
-                  {/* inline thumb for touch */}
-                  <span className="mt-4 block overflow-hidden rounded-lg border border-line sm:hidden">
-                    <Image src={item.poster} alt={item.name} width={640} height={360} className="grade h-40 w-full object-cover" />
-                  </span>
+                  {showPreviews && (
+                    <span className="mt-4 block overflow-hidden rounded-lg border border-line sm:hidden">
+                      <Image src={item.poster} alt={item.name} width={640} height={360} className="grade h-40 w-full object-cover" />
+                    </span>
+                  )}
                 </span>
 
                 <span className="flex items-center gap-4">
-                  <span className="label hidden text-right md:block">{item.period}</span>
+                  <span className="label hidden text-right md:block">{item.period.slice(0, 4)}</span>
                   <ArrowUpRight className="h-6 w-6 text-muted transition-all duration-500 ease-expo group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-fg" />
                 </span>
               </Link>
@@ -73,8 +74,7 @@ export function ExperienceList({ items }: ExperienceListProps) {
         })}
       </ul>
 
-      {/* cursor-following preview (fine pointers only) */}
-      {!reduce && (
+      {showPreviews && !reduce && (
         <motion.div
           aria-hidden
           className="pointer-events-none fixed left-0 top-0 z-30 hidden aspect-[16/10] w-[22rem] overflow-hidden rounded-lg border border-line lg:block"

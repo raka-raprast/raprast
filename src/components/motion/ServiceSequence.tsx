@@ -49,6 +49,7 @@ export function ServiceSequence({ services }: ServiceSequenceProps) {
       mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
         const items = gsap.utils.toArray<HTMLElement>(".service-sequence__item");
         gsap.set(items, { autoAlpha: 0, y: 36 });
+        gsap.set(items[0], { autoAlpha: 1, y: 0 });
 
         const timeline = gsap.timeline({
           scrollTrigger: {
@@ -62,8 +63,10 @@ export function ServiceSequence({ services }: ServiceSequenceProps) {
         });
 
         items.forEach((item, index) => {
-          timeline.to(item, { autoAlpha: 1, duration: 0.35, ease: "power2.out", y: 0 });
-          timeline.to(item, { duration: 0.6 });
+          if (index > 0) {
+            timeline.to(item, { autoAlpha: 1, duration: 0.35, ease: "power2.out", y: 0 });
+          }
+          timeline.to(item, { duration: index === 0 ? 0.95 : 0.6 });
           if (index < items.length - 1) {
             timeline.to(item, { autoAlpha: 0, duration: 0.3, ease: "power2.in", y: -36 });
           }

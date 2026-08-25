@@ -31,7 +31,7 @@ export function Nav() {
       <header className="fixed inset-x-0 top-0 z-[70]">
         <nav className="container-x flex h-[var(--nav-h)] items-center justify-between mix-blend-difference">
           <Link href="/" className="font-display text-lg font-medium tracking-tight text-white">
-            Raka Prasetyo
+            Raprast
           </Link>
           <button
             type="button"

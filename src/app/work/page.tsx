@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import { ExperienceList } from "@/components/ui/ExperienceList";
 import { MaskText } from "@/components/motion/MaskText";
-import { Reveal } from "@/components/motion/Reveal";
 import { roles, projects } from "@/content/work";
 
 export const metadata: Metadata = {
@@ -28,23 +24,8 @@ export default function WorkPage() {
       </section>
 
       <section className="container-x py-24 sm:py-32">
-        <p className="label mb-10">Side projects</p>
-        <ul className="grid gap-x-10 gap-y-10 sm:grid-cols-3">
-          {projects.map((p, i) => (
-            <Reveal as="li" key={p.slug} index={i}>
-              <Link href={`/work/${p.slug}`} data-cursor="open" className="group block">
-                <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-lg border border-line">
-                  <Image src={p.poster} alt={p.name} fill sizes="33vw" className="grade object-cover transition-transform duration-700 ease-expo group-hover:scale-105" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-xl">{p.name}</span>
-                  <ArrowUpRight className="h-4 w-4 text-muted transition-colors group-hover:text-fg" />
-                </div>
-                <p className="mt-1 text-sm text-muted">{p.tagline}</p>
-              </Link>
-            </Reveal>
-          ))}
-        </ul>
+        <p className="label mb-10">Independent products</p>
+        <ExperienceList items={projects} showPreviews={false} />
       </section>
     </div>
   );

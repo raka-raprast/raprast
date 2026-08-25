@@ -39,7 +39,7 @@ export const work: WorkItem[] = [
     tagline: "Ship your product. Skip the hiring.",
     kind: "project",
     category: "Desktop app · Dev tool",
-    period: "2025",
+    period: "2026",
     order: 100,
     stack: ["Electron", "TypeScript", "CodeMirror 6", "Node.js", "LSP", "omp"],
     summary:
@@ -62,7 +62,7 @@ export const work: WorkItem[] = [
     tagline: "One component core. Thirteen design languages.",
     kind: "project",
     category: "Design system · Dev tool",
-    period: "2025",
+    period: "2026",
     order: 99,
     stack: ["React", "Flutter", "TypeScript", "Design Tokens", "CLI"],
     summary:
@@ -85,7 +85,7 @@ export const work: WorkItem[] = [
     tagline: "Talk to your coding agent from your pocket.",
     kind: "project",
     category: "CLI · Dev tool",
-    period: "2025",
+    period: "2026",
     order: 98,
     stack: ["Python (stdlib)", "Telegram Bot API", "systemd"],
     summary:
@@ -119,6 +119,23 @@ export const work: WorkItem[] = [
     poster: "/work/youapp.webp",
     accent: "205 255 80",
     featured: true,
+  },
+  {
+    slug: "fusionpay",
+    name: "FusionPay",
+    tagline: "Global payment tools, connected in one platform.",
+    kind: "role",
+    role: "Mobile Developer",
+    company: "FusionPay",
+    category: "Fintech · Payments",
+    period: "2025 — 2026",
+    order: 95,
+    stack: [],
+    summary:
+      "FusionPay is a global financial-tools platform connecting Visa cards, virtual accounts, wallets and payment services. I contributed as a Mobile Developer across its 2025–2026 product cycle.",
+    link: "https://www.myfusionpay.com/en-US",
+    poster: "/work/fusionpay.webp",
+    accent: "43 91 246",
   },
   {
     slug: "alpha-red",
@@ -172,6 +189,40 @@ export const work: WorkItem[] = [
     accent: "45 212 191",
   },
   {
+    slug: "ask-tian",
+    name: "AskTian",
+    tagline: "Decision support for AI agents.",
+    kind: "role",
+    role: "Web Developer",
+    company: "AskTian",
+    category: "AI · Developer tools",
+    period: "2025",
+    order: 88,
+    stack: [],
+    summary:
+      "askTIAN is an MCP server that gives AI agents decision support for timing, compatibility, day energy and yes/no reads, grounded in Chinese metaphysics. I contributed to its web experience as a Web Developer in 2025.",
+    link: "https://asktian.com/",
+    poster: "/work/ask-tian.webp",
+    accent: "108 92 231",
+  },
+  {
+    slug: "heartfull",
+    name: "HeartFull",
+    tagline: "Dating for real people.",
+    kind: "role",
+    role: "Team Lead",
+    company: "HeartFull",
+    category: "Dating · Social",
+    period: "2025",
+    order: 87,
+    stack: [],
+    summary:
+      "HeartFull is a merit-based dating platform where character is the currency, with no paywalls. I led the team building its product in 2025.",
+    link: "https://heartfull.online/",
+    poster: "/work/heartfull.webp",
+    accent: "230 96 92",
+  },
+  {
     slug: "qwork",
     name: "Qwork",
     tagline: "Industrial workforce, matched on demand.",
@@ -207,6 +258,8 @@ export const work: WorkItem[] = [
   },
 ];
 
-export const workSorted = [...work].sort((a, b) => b.order - a.order);
+const startYear = (item: WorkItem) => Number.parseInt(item.period, 10);
+
+export const workSorted = [...work].sort((a, b) => startYear(b) - startYear(a) || b.order - a.order);
 export const roles = workSorted.filter((w) => w.kind === "role");
 export const projects = workSorted.filter((w) => w.kind === "project");

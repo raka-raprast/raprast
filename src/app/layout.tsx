@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/logo.png" },
+  icons: { icon: "/raprast-logo.png" },
 };
 
 export const viewport: Viewport = {

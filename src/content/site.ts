@@ -7,7 +7,7 @@ export const profile = {
   email: "raprast.raka@gmail.com",
   tagline: "I design and engineer systems end to end — from physical hardware and IoT to scalable software platforms.",
   about: [
-    "I am a multidisciplinary engineer with deep expertise across both software and hardware engineering. I enjoy owning the complete surface of a product, from the systems and infrastructure behind it to the interfaces people touch. Throughout my career, I have built scalable solutions across a diverse range of industries, including Social Media, Dating apps, Web3, Fintech, Insuretech, and AI.",
+    "I'm Raka Ramadhani Aulia Prasetyo, a multidisciplinary engineer with deep expertise across both software and hardware engineering. I enjoy owning the complete surface of a product, from the systems and infrastructure behind it to the interfaces people touch. Throughout my career, I have built scalable solutions across a diverse range of industries, including Social Media, Dating apps, Web3, Fintech, Insuretech, and AI.",
     "Having started my career in electrical and instrumentation work, I bring a pragmatic, systems-oriented approach to product development. I am currently pursuing a Master's degree in Electrical Engineering, which allows me to seamlessly bridge the gap between physical hardware, IoT systems, and polished digital experiences.",
   ],
   socials: {
