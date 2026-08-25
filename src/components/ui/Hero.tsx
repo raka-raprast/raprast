@@ -11,7 +11,7 @@ export function Hero() {
 
       <div className="container-x relative z-10 mt-auto pt-16">
         <MaskText as="p" className="label mb-6">
-          Software Engineer — {profile.location}
+          Software & Electrical Engineer — {profile.location}
         </MaskText>
         <h1 className="text-d1 leading-[0.85]">
           <MaskText delay={0.05}>Raka</MaskText>

@@ -5,10 +5,10 @@ export const profile = {
   capabilities: ["Product UI", "Mobile apps", "Backend systems", "API design", "Developer tooling", "IoT systems"],
   location: "Balikpapan, Indonesia",
   email: "raprast.raka@gmail.com",
-  tagline: "I design and build software end to end — from Flutter apps to backend systems and the developer tools in between.",
+  tagline: "I design and engineer systems end to end — from physical hardware and IoT to scalable software platforms.",
   about: [
-    "I'm a full-stack engineer who likes owning the whole surface of a product: the interface people touch, the services behind it, and the tooling that makes shipping faster. Lately that's meant travel-tech and fintech platforms by day, and a run of developer tools of my own — an AI-native IDE, a headless design system, and a Telegram bridge for coding agents.",
-    "My background is unusual: I started in electrical and instrumentation work before moving into software, and I'm finishing a master's in electrical engineering. That mix shows up in how I build — pragmatic, systems-minded, and comfortable going from hardware and IoT up to polished product UI.",
+    "I am a multidisciplinary engineer with deep expertise across both software and hardware engineering. I enjoy owning the complete surface of a product, from the systems and infrastructure behind it to the interfaces people touch. Throughout my career, I have built scalable solutions across a diverse range of industries, including Social Media, Dating apps, Web3, Fintech, Insuretech, and AI.",
+    "Having started my career in electrical and instrumentation work, I bring a pragmatic, systems-oriented approach to product development. I am currently pursuing a Master's degree in Electrical Engineering, which allows me to seamlessly bridge the gap between physical hardware, IoT systems, and polished digital experiences.",
   ],
   socials: {
     github: "https://github.com/raka-raprast",

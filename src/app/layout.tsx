@@ -19,12 +19,12 @@ const siteUrl = "https://raprast.asia";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${profile.shortName} — Software Engineer`,
+    default: `${profile.shortName} — Software & Electrical Engineer`,
     template: `%s — ${profile.shortName}`,
   },
   description: profile.tagline,
   openGraph: {
-    title: `${profile.shortName} — Software Engineer`,
+    title: `${profile.shortName} — Software & Electrical Engineer`,
     description: profile.tagline,
     url: siteUrl,
     siteName: profile.shortName,
