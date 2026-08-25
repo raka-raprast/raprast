@@ -21,7 +21,7 @@ export function Footer() {
           <div className="flex gap-6">
             <a href={profile.socials.github} target="_blank" rel="noreferrer" className="link-line text-muted hover:text-fg">GitHub</a>
             <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" className="link-line text-muted hover:text-fg">LinkedIn</a>
-            <a href={profile.socials.instagram} target="_blank" rel="noreferrer" className="link-line text-muted hover:text-fg">Instagram</a>
+            <a href={profile.socials.instagram} target="_blank" rel="noreferrer" className="link-line text-muted hover:text-fg">raka.raprast</a>
             <Link href="/contact" className="link-line text-muted hover:text-fg">Contact</Link>
           </div>
         </div>

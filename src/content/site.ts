@@ -12,8 +12,8 @@ export const profile = {
   ],
   socials: {
     github: "https://github.com/raka-raprast",
-    linkedin: "https://www.linkedin.com/in/raka-prasetyo",
-    instagram: "https://www.instagram.com/raprast",
+    linkedin: "https://www.linkedin.com/in/raka-raprast/",
+    instagram: "https://www.instagram.com/raka.raprast",
   },
   cv: "/Raka Ramadhani Aulia Prasetyo_Curriculum Vitae.pdf",
 };
