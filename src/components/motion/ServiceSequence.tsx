@@ -101,14 +101,14 @@ export function ServiceSequence({ services }: ServiceSequenceProps) {
 
       <section className="border-t border-line py-28 md:hidden">
         <div className="container-x">
-          <p className="label mb-8">Services</p>
-          <h2 className="max-w-[12ch] text-d2">I help teams build systems like:</h2>
+          <p className="label">Services</p>
+          <h2 className="mt-4 text-d3">I help teams build systems like:</h2>
           <div className="mt-14 border-t border-line">
             {services.map((service, index) => (
               <article key={service.title} className="border-b border-line py-10">
                 <p className="label mb-5">0{index + 1} / 0{services.length}</p>
-                <h3 className="text-d3">{service.title}</h3>
-                <div className="mt-6">
+                <h3 className="max-w-[14ch] text-d2">{service.title}</h3>
+                <div className="mt-10 border-t border-line pt-7">
                   <ServiceProof service={service} />
                 </div>
               </article>

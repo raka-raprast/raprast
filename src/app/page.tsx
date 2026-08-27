@@ -5,6 +5,7 @@ import { ServiceSequence } from "@/components/motion/ServiceSequence";
 import { PinnedGallery } from "@/components/motion/PinnedGallery";
 import { MaskText } from "@/components/motion/MaskText";
 import { Reveal } from "@/components/motion/Reveal";
+import { ScrollRevealText } from "@/components/motion/ScrollRevealText";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { Parallax } from "@/components/motion/Parallax";
 import { projects, roles, work } from "@/content/work";
@@ -38,20 +39,12 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <section className="container-x border-t border-line py-28 sm:py-40">
-        <Reveal>
-          <p className="label mb-8">Experience</p>
-          <h2 className="max-w-[11ch] text-d2">
-            Five years connecting products, platforms, and the people who use them.
-          </h2>
-        </Reveal>
-        <Reveal index={1}>
-          <p className="mt-10 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-            I work across the product surface: mobile apps and interfaces people touch, plus the services,
-            APIs, and tools that make them work.
-          </p>
-        </Reveal>
-      </section>
+      <ScrollRevealText eyebrow="Experience" text="Five years connecting products, platforms, and the people who use them.">
+        <p className="max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+          I work across the product surface: mobile apps and interfaces people touch, plus the services,
+          APIs, and tools that make them work.
+        </p>
+      </ScrollRevealText>
 
       <ServiceSequence services={services} />
 
