@@ -142,13 +142,12 @@ export function RouteTransition() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed z-[110] rounded-full will-change-transform"
+      className="pointer-events-none fixed z-[110] rounded-full bg-surface will-change-transform"
       style={{
         left: origin.x - radius,
         top: origin.y - radius,
         width: diameter,
         height: diameter,
-        backgroundColor: "rgb(var(--accent))",
       }}
       initial={{ scale: collapsedScale }}
       animate={{ scale: phase === "covering" ? 1 : collapsedScale }}
