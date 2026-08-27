@@ -16,8 +16,6 @@ interface ScrollRevealTextProps {
   children?: React.ReactNode;
 }
 
-const DIM = 0.22;
-
 /**
  * Pins the heading to the viewport while the reader scrolls, lighting its words
  * one after another — a "read-along" reveal driven by GSAP ScrollTrigger (which
@@ -35,7 +33,7 @@ export function ScrollRevealText({ eyebrow, text, headingClassName, children }: 
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         const targets = heading.current!.querySelectorAll<HTMLElement>(".reveal-word");
-        gsap.set(targets, { opacity: DIM });
+        const lime = getComputedStyle(document.documentElement).getPropertyValue("--accent-lime").trim();
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section.current!,
@@ -48,7 +46,7 @@ export function ScrollRevealText({ eyebrow, text, headingClassName, children }: 
           },
         });
         targets.forEach((word, i) => {
-          tl.to(word, { opacity: 1, ease: "none", duration: 1 }, i * 0.7);
+          tl.to(word, { color: `rgb(${lime})`, ease: "none", duration: 1 }, i * 0.7);
         });
       });
     }, section);

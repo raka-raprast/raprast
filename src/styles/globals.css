@@ -16,6 +16,7 @@
   --accent: 77 101 255; /* ultramarine */
   --accent-hot: 255 91 72; /* vermilion */
   --accent-warm: 255 221 108; /* butter */
+  --accent-lime: 190 255 0; /* ijo stabilo — highlighter green */
 
   --nav-h: 84px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
