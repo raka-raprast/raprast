@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { WorkItem } from "@/content/work";
@@ -41,6 +41,7 @@ function ServiceProof({ service }: { service: Service }) {
 
 export function ServiceSequence({ services }: ServiceSequenceProps) {
   const section = useRef<HTMLElement>(null);
+  const progress = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -59,6 +60,9 @@ export function ServiceSequence({ services }: ServiceSequenceProps) {
             pin: true,
             scrub: 0.6,
             invalidateOnRefresh: true,
+            onUpdate: (self) => {
+              if (progress.current) gsap.set(progress.current, { scaleX: self.progress });
+            },
           },
         });
 
@@ -95,7 +99,15 @@ export function ServiceSequence({ services }: ServiceSequenceProps) {
               </article>
             ))}
           </div>
-          <p className="label">Keep scrolling</p>
+          <div className="flex items-center gap-5">
+            <span className="label flex shrink-0 items-center gap-2 text-faint">
+              Keep scrolling
+              <ChevronDown className="h-4 w-4 animate-bounce" />
+            </span>
+            <div className="relative h-px flex-1 overflow-hidden bg-line" aria-hidden>
+              <div ref={progress} className="absolute inset-0 origin-left scale-x-0 bg-fg" />
+            </div>
+          </div>
         </div>
       </section>
 
