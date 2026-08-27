@@ -5,6 +5,7 @@ import LenisCore from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useReducedMotion } from "framer-motion";
+import { lenisStore } from "@/lib/lenis";
 
 /**
  * Smooth-scroll driver. Bridges Lenis into GSAP ScrollTrigger so scroll-driven
@@ -18,6 +19,7 @@ export function Lenis() {
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new LenisCore({ lerp: 0.1, wheelMultiplier: 1, smoothWheel: true });
+    lenisStore.current = lenis;
     document.documentElement.classList.add("lenis");
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -28,6 +30,7 @@ export function Lenis() {
     return () => {
       gsap.ticker.remove(onRaf);
       lenis.destroy();
+      lenisStore.current = null;
       document.documentElement.classList.remove("lenis");
     };
   }, [reduce]);

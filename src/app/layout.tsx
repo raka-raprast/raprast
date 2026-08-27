@@ -9,6 +9,7 @@ import { Nav } from "@/components/ui/Nav";
 import { Footer } from "@/components/ui/Footer";
 import { Lenis } from "@/components/motion/Lenis";
 import { Cursor } from "@/components/motion/Cursor";
+import { Intro } from "@/components/motion/Intro";
 import { ScrollLine } from "@/components/motion/ScrollLine";
 import { RouteTransition } from "@/components/motion/RouteTransition";
 import { ScrollGuide } from "@/components/motion/ScrollGuide";
@@ -43,7 +44,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(!sessionStorage.getItem('intro-seen')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('intro-pending')}}catch(e){}",
+          }}
+        />
         <Lenis />
+        <Intro />
         <Cursor />
         <RouteTransition />
         <ScrollLine />

@@ -203,6 +203,17 @@
 
 ::-webkit-scrollbar { width: 0; height: 0; }
 
+/* Pre-hydration intro cover: blanks the page on a first visit before the
+   React intro overlay mounts, so the nav never flashes. Removed once the
+   garage panel begins lifting. */
+html.intro-pending::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  background: rgb(var(--bg));
+}
+
 @media (hover: hover) and (pointer: fine) {
   html.has-cursor,
   html.has-cursor * {
